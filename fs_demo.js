@@ -1,8 +1,8 @@
 const fs = require('fs');
 
-let characters = [];
+let policeData = [];
 
-let peeps_csv = fs.readFileSync('data/Characters.csv', 'utf8');
+let policeData_csv = fs.readFileSync('fatal-police-shootings-data', 'utf8');
 
 let peeps = peeps_csv.split("\n");
 
