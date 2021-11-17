@@ -1,26 +1,31 @@
 const fs = require('fs');
 
-let policeData = [];
+let rawData = [];
 
-let policeData_csv = fs.readFileSync('fatal-police-shootings-data', 'utf8');
+let rawData_csv = fs.readFileSync('fatal-police-shootings-data.csv', 'utf8');
 
-let peeps = peeps_csv.split("\n");
+let policeData = rawData_csv.split("\n");
 
-peeps.forEach(function(peep) {
-  let character_info = peep.split(';');
-  let character = {};
-  character['name'] = character_info[1];
-  character['gender'] = character_info[2];
-  character['house'] = character_info[4];
-  character['species'] = character_info[7];
+policeData.forEach(function(data) {
+  let raw_info = data.split(',');
+  let personData = {};
+  personData['id'] = raw_info[0];
+  personData['name'] = raw_info[1];
+  personData['date'] = raw_info[2];
+  personData['armed'] = raw_info[3];
+  personData['age'] = raw_info[4];
+  personData['gender'] = raw_info[5];
+  personData['race'] = raw_info[6];
+  personData['state'] = raw_info[7];
+  personData['mental_illness'] = raw_info[8];
+  personData['threat_level'] = raw_info[9];
+  personData['flee'] = raw_info[10];
+  personData['longitude'] = raw_info[11];
+  personData['latitude'] = raw_info[12];
 
-  if (character_info[12])
-    character['skills'] = character_info[12].split('|');
-  else {
-    character['skills'] = [];
-  }
+  rawData.push(personData);
+  rawData.trim();
 
-  characters.push(character);
 });
 
-fs.writeFileSync('data/potter.json', JSON.stringify(characters), 'utf8');
+fs.writeFileSync('crime.json', JSON.stringify(rawData), 'utf8');
