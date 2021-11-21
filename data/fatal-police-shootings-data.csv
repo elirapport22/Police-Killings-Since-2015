@@ -1406,7 +1406,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1588,Willie Demetrius James,2016-06-02,knife,43,M,B,VA,TRUE,other,Not fleeing,-76.282,36.848
 1589,Rodney Rodriguez Smith,2016-06-02,gun,18,M,B,NC,FALSE,other,Not fleeing,-80.757,35.291
 1590,Joshua Smith,2016-06-03,knife,33,M,W,AK,FALSE,other,Not fleeing,-149.439,61.581
-1591,"Hubert Thomas Burns, Jr.",2016-06-03,knife,34,M,N,AZ,FALSE,other,Not fleeing,-112.139,33.863
+1591,"Hubert Thomas Burns Jr.",2016-06-03,knife,34,M,N,AZ,FALSE,other,Not fleeing,-112.139,33.863
 1592,Daniel Jonathan Shaham,2016-06-04,undetermined,31,M,W,CA,FALSE,attack,Not fleeing,-122.634,41.735
 1594,Demarco Rhymes,2016-06-04,gun,35,M,B,AL,FALSE,attack,Other,,
 1598,Larry Dustin Stepp,2016-06-04,knife,31,M,W,IN,TRUE,other,Not fleeing,-85.401,40.173
@@ -1638,7 +1638,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1823,Jaqwan Julius Terry,2016-08-29,gun,24,M,B,NC,FALSE,attack,Foot,-78.592,35.78
 1826,Paula Dell Phillips,2016-08-29,gun,35,F,W,AZ,FALSE,attack,Not fleeing,-114.04,35.474
 1824,Michael Peacor,2016-08-29,knife,56,M,W,CA,FALSE,attack,Not fleeing,-117.306,34.129
-1829,"James Robert Richards, Jr.",2016-08-29,gun,28,M,N,AK,FALSE,attack,Foot,-147.72,64.841
+1829,"James Robert Richards Jr.",2016-08-29,gun,28,M,N,AK,FALSE,attack,Foot,-147.72,64.841
 1827,Levonia Riggins,2016-08-30,unarmed,22,M,B,FL,FALSE,other,Not fleeing,-82.364,27.934
 1828,Lyle Patrick Blanchard,2016-08-30,unarmed,59,M,W,TX,FALSE,other,Other,-97.614,31.049
 1825,Justin Baker,2016-08-30,chain saw,36,M,,WA,TRUE,attack,Not fleeing,-122.312,47.019
@@ -3752,7 +3752,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4115,Sean Dutcher,2018-10-18,vehicle,38,M,W,WI,FALSE,attack,Car,-88.543,42.723
 4117,Jacob Servais,2018-10-18,unarmed,19,M,B,NJ,FALSE,other,Not fleeing,-75.044,39.451
 4161,Mahlon Edward Summerour,2018-10-18,toy weapon,63,M,B,GA,TRUE,attack,Not fleeing,-83.711,33.804
-4116,"Neico Crooks, Jr",2018-10-19,vehicle,21,M,B,FL,FALSE,attack,Car,-80.203,25.948
+4116,Neico Crooks Jr,2018-10-19,vehicle,21,M,B,FL,FALSE,attack,Car,-80.203,25.948
 4124,Christopher Calabro,2018-10-19,knife,25,M,W,MA,TRUE,other,Not fleeing,,
 4122,Edward Paul Zumski,2018-10-20,gun,35,M,W,TX,FALSE,attack,Not fleeing,-95.536,33.662
 4126,Robert Smith,2018-10-20,gun,50,M,W,WA,FALSE,other,Not fleeing,-122.438,47.111
@@ -3777,7 +3777,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4139,Ida Christy Stiles,2018-10-29,toy weapon,42,F,W,GA,TRUE,attack,Not fleeing,-84.027,33.174
 4143,John Wurms,2018-10-31,gun,32,M,W,FL,FALSE,attack,Not fleeing,-81.031,29.106
 4144,Tony Bernard Smith,2018-10-31,gun,24,M,B,FL,FALSE,other,Foot,-81.686,30.372
-4145,"Jose Centeno, Jr.",2018-10-31,toy weapon,17,M,H,TX,FALSE,attack,Car,-95.53,30.027
+4145,Jose Centeno Jr.,2018-10-31,toy weapon,17,M,H,TX,FALSE,attack,Car,-95.53,30.027
 4146,Gonzalo Rico-Jimenez,2018-10-31,vehicle,26,M,H,NV,FALSE,attack,Car,-115.105,36.195
 4158,Jesse J. Quinton,2018-11-02,unarmed,35,M,B,ID,FALSE,attack,Foot,-112.032,43.498
 4159,Andrew Moore,2018-11-02,knife,25,M,W,WV,FALSE,attack,Not fleeing,-81.666,38.378
@@ -3818,7 +3818,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4234,John David Manning,2018-11-14,knife,29,M,W,SC,FALSE,attack,Not fleeing,,
 4186,Allen Fanning,2018-11-15,gun,18,M,B,CO,FALSE,other,Not fleeing,-104.876,39.595
 4187,Agustin Gonsalez,2018-11-15,straight edge razor,29,M,H,CA,TRUE,other,Not fleeing,-122.078,37.663
-4189,"Jack Fields, Jr.",2018-11-15,knife,25,M,B,GA,TRUE,attack,Not fleeing,-82.083,33.48
+4189,Jack Fields Jr.,2018-11-15,knife,25,M,B,GA,TRUE,attack,Not fleeing,-82.083,33.48
 4190,GD Hendrix,2018-11-15,metal pipe,48,M,W,CA,TRUE,other,Car,-121.56,39.65
 4235,Steven Smith,2018-11-15,gun,60,M,W,AL,FALSE,attack,Not fleeing,,
 4191,,2018-11-16,gun,,M,,TX,FALSE,attack,Not fleeing,-95.525,29.86
@@ -4222,7 +4222,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4641,Chadwick Dale Martin,2019-04-16,vehicle,24,M,W,SC,FALSE,attack,Car,-82.196,34.689
 5412,Patrick West,2019-04-16,sword,42,M,W,WA,TRUE,other,Not fleeing,-123.594,46.981
 4642,Akeen Brown,2019-04-17,gun,34,M,B,MI,FALSE,attack,Not fleeing,-83.4,42.324
-4648,"John Stewart, Jr.",2019-04-17,knife,46,M,W,WV,TRUE,attack,Foot,-80.17,39.708
+4648,John Stewart Jr.,2019-04-17,knife,46,M,W,WV,TRUE,attack,Foot,-80.17,39.708
 4637,John Duane Fairbanks,2019-04-18,gun,40,M,N,MN,FALSE,attack,Foot,-93.276,45.174
 4646,Michael Allen Felch,2019-04-18,gun,30,M,W,CA,FALSE,attack,Not fleeing,-121.976,37.554
 4647,Luiz Leizado,2019-04-18,gun,42,M,H,NY,FALSE,attack,Foot,-73.932,40.854
@@ -4287,7 +4287,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4729,Michael Nieto,2019-05-16,gun,,M,H,FL,FALSE,attack,Not fleeing,-80.105,26.838
 4733,Elizabeth Harris,2019-05-16,gun,58,F,W,TX,TRUE,attack,Not fleeing,-94.415,33.462
 4730,Luis Lomante,2019-05-17,knife,39,M,H,FL,FALSE,other,Not fleeing,-80.244,26.065
-4732,"Donald Davis, Jr.",2019-05-17,gun,40,M,B,LA,FALSE,attack,,-89.999,30.024
+4732,Donald Davis Jr.,2019-05-17,gun,40,M,B,LA,FALSE,attack,,-89.999,30.024
 5007,Daniel Warren,2019-05-17,gun,36,M,B,CA,FALSE,attack,Not fleeing,-118.155,34.172
 4728,Dion Grey Hat,2019-05-18,undetermined,27,M,N,AZ,FALSE,undetermined,,-110.963,36.322
 4731,Andrew Giovanni Meza,2019-05-18,knife,20,M,H,CA,TRUE,attack,Not fleeing,-117.922,33.794
@@ -4355,7 +4355,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4832,William James Back,2019-06-09,gun,41,M,W,AR,FALSE,attack,Not fleeing,,
 4833,Ysidro Osornio-Velasquez,2019-06-09,gun,32,M,H,CA,FALSE,attack,Car,-117.154,33.651
 4771,Terry Frost,2019-06-10,vehicle,,M,W,TN,FALSE,attack,Not fleeing,-82.574,36.499
-4778,"Vincense Williams, Jr.",2019-06-10,gun,24,M,B,OK,FALSE,other,Not fleeing,,
+4778,Vincense Williams Jr.,2019-06-10,gun,24,M,B,OK,FALSE,other,Not fleeing,,
 4779,Brent Durbin-Daniel,2019-06-10,gun,19,M,B,OK,TRUE,other,Car,-98.469,34.621
 4777,Jaquan Derrick Diijon Thompson,2019-06-11,knife,27,M,B,OK,FALSE,attack,Not fleeing,-94.629,35.078
 4781,Eddie Humberto Segura,2019-06-11,barstool,40,M,H,FL,TRUE,attack,Not fleeing,-81.286,28.495
@@ -5627,7 +5627,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 6158,Robert Samuel Craig Lusk,2020-09-10,gun,18,M,B,GA,FALSE,attack,Foot,-84.175,33.926
 6163,Robert Ray Doss,2020-09-10,gun,,M,W,NC,FALSE,attack,Not fleeing,-82.506,35.377
 6164,Jonathan Darsaw,2020-09-10,gun,49,M,B,TN,FALSE,attack,Not fleeing,-89.404,35.062
-6165,"Samuel Herrera, Jr.",2020-09-10,gun,41,M,H,CA,FALSE,attack,Not fleeing,-118.203,33.892
+6165,Samuel Herrera Jr.,2020-09-10,gun,41,M,H,CA,FALSE,attack,Not fleeing,-118.203,33.892
 6166,Glenn Alvin Eldridge,2020-09-10,gun,48,M,W,NC,FALSE,other,,-79.035,35.033
 6175,Joshua Clayton Brant,2020-09-11,gun,31,M,,WA,FALSE,attack,Car,-117.319,47.664
 6159,Robert Coleman,2020-09-12,gun,88,M,B,CA,TRUE,other,Not fleeing,-121.534,38.58
