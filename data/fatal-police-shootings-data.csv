@@ -1051,7 +1051,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1201,Cedric Norris,2016-01-21,gun,39,M,B,OK,TRUE,attack,Car,-95.582,35.287
 1200,Michael Lamar Robinson,2016-01-23,toy weapon,43,M,W,AL,FALSE,other,Not fleeing,-86.652,32.852
 1199,Sergio Alvarado-Morales,2016-01-25,knife,38,M,H,NV,TRUE,other,Not fleeing,-119.804,39.477
-1203,"Robert ""LaVoy"" Finicum",2016-01-26,gun,55,M,W,OR,FALSE,other,Not fleeing,-119.054,43.586
+1203,Robert 'LaVoy' Finicum,2016-01-26,gun,55,M,W,OR,FALSE,other,Not fleeing,-119.054,43.586
 1204,Scott Scanlon,2016-01-27,gun,52,M,W,AR,FALSE,attack,Not fleeing,-93.169,34.659
 1205,Johnathan Bratcher,2016-01-27,gun,32,M,B,TN,FALSE,attack,Other,-90.033,35.108
 1206,Herman Flores,2016-01-27,gun,31,M,H,NM,FALSE,attack,Not fleeing,-105.992,35.654
@@ -1177,7 +1177,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1339,Philip Vitullo,2016-03-07,gun,49,M,W,NY,TRUE,attack,Not fleeing,-77.623,43.238
 1343,Byron Rosas,2016-03-07,knife,45,M,H,CA,FALSE,other,Not fleeing,-121.878,37.324
 1344,Randall J. Selsor,2016-03-07,undetermined,45,M,W,KS,FALSE,undetermined,Not fleeing,-95.682,39.055
-1345,"John Charles ""JC"" Graham",2016-03-07,gun,42,M,W,MT,FALSE,attack,Not fleeing,-108.501,45.783
+1345,John Charles 'JC' Graham,2016-03-07,gun,42,M,W,MT,FALSE,attack,Not fleeing,-108.501,45.783
 1348,Daniel H. Chavez,2016-03-07,,41,M,H,NM,FALSE,other,Car,-104.277,32.422
 1347,Jeffrey Glen Casale,2016-03-08,toy weapon,27,M,W,FL,TRUE,attack,Not fleeing,-82.462,28.084
 1349,Wesley Sheppard,2016-03-10,toy weapon,37,M,W,MS,FALSE,other,Not fleeing,-88.885,30.396
@@ -1186,7 +1186,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1353,Jason Meador,2016-03-10,gun,50,M,W,TX,TRUE,attack,Not fleeing,-102.374,31.888
 1354,German Gonzalez,2016-03-10,,23,M,H,CO,FALSE,attack,Car,-104.835,37.945
 1350,Tyre Privott,2016-03-11,gun,25,M,B,VA,FALSE,attack,Not fleeing,-76.244,36.93
-1355,"Manford ""Butch"" Moore Jr.",2016-03-11,gun,51,M,W,KS,TRUE,attack,Not fleeing,-96.62,37.815
+1355,Manford 'Butch' Moore Jr.,2016-03-11,gun,51,M,W,KS,TRUE,attack,Not fleeing,-96.62,37.815
 1375,Jack Goodman,2016-03-11,knife,46,M,W,IL,TRUE,other,Not fleeing,-88.956,40.145
 1515,Teodoro Valencia,2016-03-11,gun,23,M,H,CA,FALSE,attack,Foot,-122.028,37.54
 1476,Christopher Michael Tokazowski,2016-03-12,gun,43,M,W,NC,TRUE,attack,Not fleeing,-79.809,36.108
@@ -1358,7 +1358,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1537,Francis Clark,2016-05-14,gun,43,M,N,AZ,FALSE,attack,Not fleeing,-112.139,33.466
 1538,Jeffrey Sims,2016-05-14,gun,59,M,W,FL,FALSE,attack,Not fleeing,-81.134,28.9
 1540,Ryan Johnson,2016-05-14,gun,34,M,W,GA,TRUE,other,Not fleeing,-84.191,33.591
-1541,"Dracy ""Clint"" Pendleton",2016-05-15,gun,35,M,W,IL,FALSE,attack,Foot,-88.4,37.547
+1541,Dracy 'Clint' Pendleton,2016-05-15,gun,35,M,W,IL,FALSE,attack,Foot,-88.4,37.547
 1542,Jabril Robinson,2016-05-16,gun,23,M,B,GA,FALSE,attack,Foot,-84.449,33.58
 1544,Luke Sanders,2016-05-17,ax,36,M,W,CA,TRUE,other,Not fleeing,-121.48,41.961
 1543,Garry Conrad,2016-05-18,knife,46,M,W,NY,TRUE,other,Not fleeing,-73.987,40.762
@@ -1383,7 +1383,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1567,Mario Montoya,2016-05-24,gun,31,M,H,NM,FALSE,attack,Not fleeing,-106.51,35.069
 1565,Derek Prophet,2016-05-25,knife,43,M,W,OK,TRUE,other,Not fleeing,-97.53,35.466
 1566,Doll Pierre-Louis,2016-05-25,,24,M,B,FL,FALSE,other,Car,-80.241,25.934
-1568,"Eugene ""Geno"" Francis Smith",2016-05-26,gun,29,M,W,MN,FALSE,attack,Not fleeing,-93.012,44.963
+1568,Eugene 'Geno' Francis Smith,2016-05-26,gun,29,M,W,MN,FALSE,attack,Not fleeing,-93.012,44.963
 1569,Warren Christian,2016-05-26,gun,43,M,W,IL,FALSE,attack,Foot,-87.559,41.586
 1570,,2016-05-26,gun,,M,,TX,FALSE,other,Not fleeing,-98.65,29.418
 1571,Devonte Gates,2016-05-26,undetermined,21,M,B,IL,FALSE,undetermined,Foot,-90.097,38.632
@@ -1406,7 +1406,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1588,Willie Demetrius James,2016-06-02,knife,43,M,B,VA,TRUE,other,Not fleeing,-76.282,36.848
 1589,Rodney Rodriguez Smith,2016-06-02,gun,18,M,B,NC,FALSE,other,Not fleeing,-80.757,35.291
 1590,Joshua Smith,2016-06-03,knife,33,M,W,AK,FALSE,other,Not fleeing,-149.439,61.581
-1591,"Hubert Thomas Burns Jr.",2016-06-03,knife,34,M,N,AZ,FALSE,other,Not fleeing,-112.139,33.863
+1591,Hubert Thomas Burns Jr.,2016-06-03,knife,34,M,N,AZ,FALSE,other,Not fleeing,-112.139,33.863
 1592,Daniel Jonathan Shaham,2016-06-04,undetermined,31,M,W,CA,FALSE,attack,Not fleeing,-122.634,41.735
 1594,Demarco Rhymes,2016-06-04,gun,35,M,B,AL,FALSE,attack,Other,,
 1598,Larry Dustin Stepp,2016-06-04,knife,31,M,W,IN,TRUE,other,Not fleeing,-85.401,40.173
@@ -1638,7 +1638,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 1823,Jaqwan Julius Terry,2016-08-29,gun,24,M,B,NC,FALSE,attack,Foot,-78.592,35.78
 1826,Paula Dell Phillips,2016-08-29,gun,35,F,W,AZ,FALSE,attack,Not fleeing,-114.04,35.474
 1824,Michael Peacor,2016-08-29,knife,56,M,W,CA,FALSE,attack,Not fleeing,-117.306,34.129
-1829,"James Robert Richards Jr.",2016-08-29,gun,28,M,N,AK,FALSE,attack,Foot,-147.72,64.841
+1829,James Robert Richards Jr.,2016-08-29,gun,28,M,N,AK,FALSE,attack,Foot,-147.72,64.841
 1827,Levonia Riggins,2016-08-30,unarmed,22,M,B,FL,FALSE,other,Not fleeing,-82.364,27.934
 1828,Lyle Patrick Blanchard,2016-08-30,unarmed,59,M,W,TX,FALSE,other,Other,-97.614,31.049
 1825,Justin Baker,2016-08-30,chain saw,36,M,,WA,TRUE,attack,Not fleeing,-122.312,47.019
@@ -1876,7 +1876,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 2089,Bradley King,2016-11-29,knife,29,M,W,IN,TRUE,other,Not fleeing,-86.398,39.78
 2090,Alexander Chance Partain,2016-11-29,unarmed,31,M,W,SC,FALSE,attack,Foot,-82.647,34.343
 2092,David K. Crosby-Dowdy,2016-11-30,gun,25,M,B,MO,FALSE,other,Not fleeing,-94.526,39.103
-2091,"Bruce Randall ""Zeus"" Johnson",2016-12-01,gun,38,M,B,WA,FALSE,attack,Not fleeing,-122.419,47.21
+2091,Bruce Randall 'Zeus' Johnson,2016-12-01,gun,38,M,B,WA,FALSE,attack,Not fleeing,-122.419,47.21
 2093,Jose N. Barron Gomez,2016-12-01,gun,,M,H,AZ,FALSE,attack,,-110.943,32.169
 2095,Quinton Phillips,2016-12-01,gun,83,M,W,AR,FALSE,attack,Not fleeing,-93.082,35.365
 2096,Dylan M. Dalzell,2016-12-02,crowbar,22,M,W,KY,FALSE,other,Not fleeing,-85.358,38.221
@@ -2173,7 +2173,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 2422,Ryan L. Rosa,2017-03-14,,36,M,W,WA,FALSE,attack,Not fleeing,-122.364,47.239
 2423,Alexander Meltz,2017-03-14,gun,18,M,W,CO,FALSE,attack,Not fleeing,-105.042,39.9
 2424,Shawn Anthony Dumitras,2017-03-14,gun,43,M,W,FL,FALSE,attack,,-85.892,30.225
-2426,"Elena ""Ebbie"" Mondragon",2017-03-14,unarmed,16,F,H,CA,FALSE,other,,-122.065,37.661
+2426,Elena 'Ebbie' Mondragon,2017-03-14,unarmed,16,F,H,CA,FALSE,other,,-122.065,37.661
 2418,Cordale Quinn Handy,2017-03-15,gun,29,M,B,MN,FALSE,other,Not fleeing,-93.067,44.961
 2428,Todd Munson,2017-03-15,,25,M,W,AZ,FALSE,other,Car,-112.117,33.784
 2429,Frederick Ricardo Brown,2017-03-16,gun,34,M,B,MI,FALSE,attack,Not fleeing,-83.006,42.5
@@ -2461,7 +2461,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 2927,Zepp Crouchet,2017-07-04,gun,42,M,B,CA,FALSE,other,Car,-121.788,38.009
 2742,Alexander Bonds,2017-07-05,gun,34,M,B,NY,FALSE,attack,Foot,,
 2743,Tiffany Lynn Potter,2017-07-05,gun,29,F,W,IA,FALSE,attack,Foot,-93.601,41.608
-2746,"Edwin ""Beanie"" Esker",2017-07-05,chainsaw,53,M,W,IL,FALSE,other,Not fleeing,-90.23,38.23
+2746,Edwin 'Beanie' Esker,2017-07-05,chainsaw,53,M,W,IL,FALSE,other,Not fleeing,-90.23,38.23
 2747,Jamie Huskey,2017-07-05,gun,45,M,W,OK,FALSE,attack,Not fleeing,-94.804,35.449
 2748,Jonathan Coronel,2017-07-05,unarmed,24,M,H,CA,FALSE,other,Foot,-117.253,33.2
 2749,Carroll Tuttle,2017-07-05,gun,51,M,W,ME,FALSE,attack,,-69.787,44.791
@@ -2690,7 +2690,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 2992,Quentin Starke,2017-09-30,gun,44,M,W,IN,FALSE,attack,Car,-85.921,39.209
 2993,Tyrell Dewayne Pinkston,2017-09-30,gun,28,M,B,FL,FALSE,other,Not fleeing,-81.669,29.648
 2994,Lester Jesus Machado,2017-10-01,,24,M,H,FL,FALSE,attack,Car,-80.327,25.894
-2995,"Marquis ""Bubba"" Jones",2017-10-01,gun,27,M,B,IA,FALSE,other,Other,-91.107,40.805
+2995,Marquis 'Bubba' Jones,2017-10-01,gun,27,M,B,IA,FALSE,other,Other,-91.107,40.805
 2997,Anthony Gallo,2017-10-01,knife,34,M,W,PA,TRUE,other,Not fleeing,-80.291,40.194
 2998,Micah McComas,2017-10-01,unarmed,41,M,W,AK,FALSE,other,Car,-149.437,60.126
 3000,George Randall Newman,2017-10-01,gun,26,M,W,CO,FALSE,attack,Not fleeing,-105.077,40.611
@@ -3587,7 +3587,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 3926,Emmanuel Alquisiras,2018-08-03,Taser,29,M,H,FL,TRUE,other,Not fleeing,-81.493,29.316
 3921,Eric Benjamen Richards,2018-08-04,gun,33,M,W,MO,TRUE,attack,Not fleeing,-94.439,39.234
 3922,John Randolph,2018-08-04,gun,38,M,W,FL,TRUE,other,Not fleeing,-80.101,26.451
-3913,"William ""Billy"" James Hughes",2018-08-05,gun,43,M,N,MN,FALSE,other,Not fleeing,-93.138,44.952
+3913,William 'Billy' James Hughes,2018-08-05,gun,43,M,N,MN,FALSE,other,Not fleeing,-93.138,44.952
 3914,Kevin Rhinehart,2018-08-05,gun,58,M,,CA,FALSE,other,Not fleeing,-117.351,34.421
 3916,James Bishop,2018-08-05,baseball bat,29,M,W,NM,TRUE,attack,Not fleeing,-106.768,32.339
 3918,Johnny Fisher,2018-08-05,gun,68,M,W,AR,FALSE,attack,Not fleeing,-94.368,35.472
@@ -3616,7 +3616,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 3965,Mark Harvey,2018-08-13,gun,32,M,B,IL,FALSE,attack,Foot,-87.701,41.481
 3966,Chris Cameron,2018-08-13,gun,31,M,W,IA,TRUE,other,Not fleeing,-94.386,41.053
 3967,,2018-08-14,gun and knife,,M,H,CA,TRUE,attack,Not fleeing,-119.736,36.739
-3968,"Charlie ""Lee"" Hodges",2018-08-16,gun,58,M,W,FL,FALSE,attack,Not fleeing,-82.429,30.204
+3968,Charlie 'Lee' Hodges,2018-08-16,gun,58,M,W,FL,FALSE,attack,Not fleeing,-82.429,30.204
 3974,Adrian Herron,2018-08-16,knife,30,M,B,AK,FALSE,attack,Not fleeing,-149.439,61.581
 3975,Aquantis Givens,2018-08-17,gun,21,M,B,TX,FALSE,attack,,-97.743,30.268
 3977,Spencer Mendez,2018-08-18,gun,15,M,H,CA,FALSE,other,Other,-120.801,37.58
@@ -3650,7 +3650,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4012,Chase Sullivan,2018-08-31,knife,36,M,W,TN,TRUE,other,Not fleeing,-88.666,35.427
 4044,Paul Askins,2018-08-31,gun,61,M,W,CO,FALSE,attack,Not fleeing,-104.959,39.438
 4011,Oshae Terry,2018-09-01,vehicle,24,M,B,TX,FALSE,attack,Car,-97.149,32.7
-4007,"Fernand ""Fred"" Lete",2018-09-03,gun,70,M,H,NM,FALSE,other,,-106.544,35.318
+4007,Fernand 'Fred' Lete,2018-09-03,gun,70,M,H,NM,FALSE,other,,-106.544,35.318
 4008,Steve L. Anderson,2018-09-03,knife,40,M,W,WA,TRUE,other,Not fleeing,-117.582,47.483
 4009,Aaron Demonta Fleming,2018-09-03,gun,21,M,B,GA,FALSE,attack,Foot,-83.833,33.613
 4015,Timmy Henley,2018-09-04,knife,27,M,W,CO,FALSE,attack,Not fleeing,-105.03,39.872
@@ -3706,7 +3706,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4103,Brian Lee Rogers,2018-09-30,ax,40,M,W,TN,TRUE,other,Not fleeing,-84.06,35.603
 4070,Keagan Johnson,2018-10-01,knife,23,M,W,MN,FALSE,attack,Foot,-92.859,44.731
 4073,Brian Baker,2018-10-01,unarmed,33,M,W,FL,TRUE,other,Not fleeing,-81.377,28.526
-4072,"James ""Cody"" Martin",2018-10-02,gun,26,M,W,GA,TRUE,attack,Not fleeing,-84.563,33.808
+4072,James 'Cody' Martin,2018-10-02,gun,26,M,W,GA,TRUE,attack,Not fleeing,-84.563,33.808
 4074,LaJuana Philips,2018-10-02,vehicle,36,F,B,CA,FALSE,attack,Not fleeing,-117.307,34.522
 4071,Toby Bailey,2018-10-03,gun,38,M,B,TN,TRUE,attack,Not fleeing,-89.887,35.206
 4151,Arthur Harbison,2018-10-04,knife,25,M,W,MS,FALSE,attack,,-91.082,33.341
@@ -3795,7 +3795,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4230,,2018-11-06,gun,67,M,,FL,TRUE,attack,Not fleeing,,
 4165,Delson Silva,2018-11-07,gun,68,M,,CA,FALSE,attack,Not fleeing,-117.517,33.899
 4166,,2018-11-07,gun,,M,,TX,FALSE,attack,Not fleeing,-98.49,29.424
-4231,"Jesus ""Chuy"" Guzman",2018-11-08,gun,34,M,H,CA,FALSE,attack,Foot,,
+4231,Jesus 'Chuy' Guzman,2018-11-08,gun,34,M,H,CA,FALSE,attack,Foot,,
 4168,Travis Jordan,2018-11-09,knife,36,M,B,MN,TRUE,other,Not fleeing,-93.304,45.022
 4170,Christopher William Parrish,2018-11-09,rock,33,M,W,UT,FALSE,attack,Car,,
 4171,Cody Paris Belgard,2018-11-09,unarmed,30,M,W,UT,FALSE,undetermined,Car,-111.946,40.787
@@ -3907,14 +3907,14 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4330,Jose Lemus,2018-12-21,gun,57,M,H,CA,FALSE,attack,Not fleeing,-117.934,34.12
 4410,David MacAdams,2018-12-21,knife,56,M,W,FL,FALSE,other,Not fleeing,-85.623,30.198
 4326,Jason Delgado Perez,2018-12-23,gun,36,M,H,NM,TRUE,attack,Not fleeing,-106.559,35.08
-4329,"Kaulana ""Toji"" Reinhardt",2018-12-23,gun,,M,O,HI,FALSE,attack,Car,-156.502,20.884
+4329,Kaulana 'Toji' Reinhardt,2018-12-23,gun,,M,O,HI,FALSE,attack,Car,-156.502,20.884
 4327,Abdias Flores,2018-12-24,gun,,M,H,NM,FALSE,attack,Not fleeing,-106.606,35.107
 4324,Jennifer Vasquez,2018-12-25,vehicle,24,F,H,CA,FALSE,attack,Car,-121.923,37.311
 4325,Antonio A. Ramos,2018-12-25,gun,34,M,H,AZ,FALSE,attack,Not fleeing,-112.571,33.436
 4322,Michael Jerome Taylor,2018-12-26,vehicle,17,M,B,FL,FALSE,attack,Car,-81.95,28.039
 4323,Gary Warbritton,2018-12-26,gun,21,M,W,AR,FALSE,attack,Not fleeing,-90.293,36.259
 4328,Wayne Falana,2018-12-26,gun,35,M,B,FL,TRUE,attack,Not fleeing,-82.779,27.965
-4333,"Mark Wade ""Cornbread"" Luttrell",2018-12-28,gun,34,M,W,TN,FALSE,attack,Not fleeing,-86.24,35.39
+4333,Mark Wade 'Cornbread' Luttrell,2018-12-28,gun,34,M,W,TN,FALSE,attack,Not fleeing,-86.24,35.39
 4336,Glenn A. Rightsell,2018-12-28,gun,56,M,W,IN,FALSE,other,Not fleeing,,
 4338,Shane Lyons,2018-12-28,machete,35,M,B,TX,FALSE,other,Not fleeing,-93.957,29.875
 4346,Edwin C. Bundy,2018-12-28,gun,46,M,W,AZ,FALSE,other,Not fleeing,-112.168,33.611
@@ -4411,7 +4411,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 4826,,2019-06-29,gun,61,M,W,TX,FALSE,attack,,-97.126,33.102
 5455,Jack Daniel West,2019-06-29,gun,61,M,W,TX,FALSE,attack,Not fleeing,-97.125,33.102
 4823,Christopher Barela,2019-07-01,gun,22,M,H,CO,FALSE,attack,Not fleeing,-104.925,39.729
-4834,"Terry Allen ""Bubba"" Payne",2019-07-01,gun,52,M,W,MS,FALSE,attack,Car,-88.965,34.104
+4834,Terry Allen 'Bubba' Payne,2019-07-01,gun,52,M,W,MS,FALSE,attack,Car,-88.965,34.104
 4835,Aaron Hong,2019-07-01,knife,23,M,A,GA,TRUE,attack,Not fleeing,-83.399,33.914
 4836,Ben Fields,2019-07-01,knife,67,M,B,FL,FALSE,other,Not fleeing,-80.402,27.25
 4837,Chad Williams,2019-07-02,ax,44,M,W,MI,TRUE,attack,,-84.693,44.915
@@ -4824,7 +4824,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 5232,Donald James Eversen,2019-12-01,knife,60,M,W,CA,TRUE,attack,Not fleeing,-122.039,37.942
 5233,Yemerson Melendez,2019-12-01,gun and vehicle,16,M,H,FL,FALSE,attack,Other,-80.332,27.445
 5235,Steven Kerr,2019-12-01,vehicle,25,M,W,FL,FALSE,attack,Car,-82.144,28.023
-5384,Jordan Oliver,2019-12-01,"car, knife and mace",20,M,W,PA,FALSE,attack,Car,,
+5384,Jordan Oliver,2019-12-01,car, knife and mace,20,M,W,PA,FALSE,attack,Car,,
 5230,Jerric Harris,2019-12-02,gun,21,M,B,FL,FALSE,attack,Foot,-81.06,29.214
 5246,Dai Phuoc Nguyen,2019-12-02,knife,38,M,A,CA,FALSE,other,,-118.056,34.065
 5249,Michael Dean,2019-12-02,unarmed,28,M,B,TX,FALSE,undetermined,Not fleeing,-97.337,31.061
@@ -6699,7 +6699,7 @@ id,name,date,armed,age,gender,race,state,signs_of_mental_illness,threat_level,fl
 7256,Clayburn Elwood Grant,2021-10-23,unknown weapon,34,M,,MT,FALSE,other,Car,-108.534,48.2
 7258,Nicholas Smith,2021-10-24,gun,35,M,,AR,FALSE,attack,Not fleeing,-92.474,35.085
 7259,Kim Douglas Ropp,2021-10-24,knife,60,M,,MI,FALSE,attack,Not fleeing,-85.642,42.882
-7264, ,2021-10-24,gun,,M,,KY,FALSE,attack,Foot,-87.494,36.859
+7264,,2021-10-24,gun,,M,,KY,FALSE,attack,Foot,-87.494,36.859
 7257,Kristopher M. Kramer,2021-10-25,sword,33,M,,IL,FALSE,attack,Not fleeing,-88.749,41.943
 7254,Ivan Foster,2021-10-26,gun,,M,,KY,FALSE,attack,Not fleeing,-85.699,38.268
 7265,Robert Richart,2021-10-27,gun,56,M,,TX,TRUE,attack,Not fleeing,-97.887,30.191

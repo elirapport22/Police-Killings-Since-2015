@@ -15785,7 +15785,7 @@
   },
   {
     "id": "1203",
-    "name": "\"Robert \"\"LaVoy\"\" Finicum\"",
+    "name": "Robert 'LaVoy' Finicum",
     "date": "2016-01-26",
     "armed": "gun",
     "age": "55",
@@ -17675,7 +17675,7 @@
   },
   {
     "id": "1345",
-    "name": "\"John Charles \"\"JC\"\" Graham\"",
+    "name": "John Charles 'JC' Graham",
     "date": "2016-03-07",
     "armed": "gun",
     "age": "42",
@@ -17810,7 +17810,7 @@
   },
   {
     "id": "1355",
-    "name": "\"Manford \"\"Butch\"\" Moore Jr.\"",
+    "name": "Manford 'Butch' Moore Jr.",
     "date": "2016-03-11",
     "armed": "gun",
     "age": "51",
@@ -20390,7 +20390,7 @@
   },
   {
     "id": "1541",
-    "name": "\"Dracy \"\"Clint\"\" Pendleton\"",
+    "name": "Dracy 'Clint' Pendleton",
     "date": "2016-05-15",
     "armed": "gun",
     "age": "35",
@@ -20765,7 +20765,7 @@
   },
   {
     "id": "1568",
-    "name": "\"Eugene \"\"Geno\"\" Francis Smith\"",
+    "name": "Eugene 'Geno' Francis Smith",
     "date": "2016-05-26",
     "armed": "gun",
     "age": "29",
@@ -21110,7 +21110,7 @@
   },
   {
     "id": "1591",
-    "name": "\"Hubert Thomas Burns Jr.\"",
+    "name": "Hubert Thomas Burns Jr.",
     "date": "2016-06-03",
     "armed": "knife",
     "age": "34",
@@ -24590,7 +24590,7 @@
   },
   {
     "id": "1829",
-    "name": "\"James Robert Richards Jr.\"",
+    "name": "James Robert Richards Jr.",
     "date": "2016-08-29",
     "armed": "gun",
     "age": "28",
@@ -28160,7 +28160,7 @@
   },
   {
     "id": "2091",
-    "name": "\"Bruce Randall \"\"Zeus\"\" Johnson\"",
+    "name": "Bruce Randall 'Zeus' Johnson",
     "date": "2016-12-01",
     "armed": "gun",
     "age": "38",
@@ -32615,7 +32615,7 @@
   },
   {
     "id": "2426",
-    "name": "\"Elena \"\"Ebbie\"\" Mondragon\"",
+    "name": "Elena 'Ebbie' Mondragon",
     "date": "2017-03-14",
     "armed": "unarmed",
     "age": "16",
@@ -36935,7 +36935,7 @@
   },
   {
     "id": "2746",
-    "name": "\"Edwin \"\"Beanie\"\" Esker\"",
+    "name": "Edwin 'Beanie' Esker",
     "date": "2017-07-05",
     "armed": "chainsaw",
     "age": "53",
@@ -40370,7 +40370,7 @@
   },
   {
     "id": "2995",
-    "name": "\"Marquis \"\"Bubba\"\" Jones\"",
+    "name": "Marquis 'Bubba' Jones",
     "date": "2017-10-01",
     "armed": "gun",
     "age": "27",
@@ -53825,7 +53825,7 @@
   },
   {
     "id": "3913",
-    "name": "\"William \"\"Billy\"\" James Hughes\"",
+    "name": "William 'Billy' James Hughes",
     "date": "2018-08-05",
     "armed": "gun",
     "age": "43",
@@ -54260,7 +54260,7 @@
   },
   {
     "id": "3968",
-    "name": "\"Charlie \"\"Lee\"\" Hodges\"",
+    "name": "Charlie 'Lee' Hodges",
     "date": "2018-08-16",
     "armed": "gun",
     "age": "58",
@@ -54770,7 +54770,7 @@
   },
   {
     "id": "4007",
-    "name": "\"Fernand \"\"Fred\"\" Lete\"",
+    "name": "Fernand 'Fred' Lete",
     "date": "2018-09-03",
     "armed": "gun",
     "age": "70",
@@ -55610,7 +55610,7 @@
   },
   {
     "id": "4072",
-    "name": "\"James \"\"Cody\"\" Martin\"",
+    "name": "James 'Cody' Martin",
     "date": "2018-10-02",
     "armed": "gun",
     "age": "26",
@@ -56945,7 +56945,7 @@
   },
   {
     "id": "4231",
-    "name": "\"Jesus \"\"Chuy\"\" Guzman\"",
+    "name": "Jesus 'Chuy' Guzman",
     "date": "2018-11-08",
     "armed": "gun",
     "age": "34",
@@ -58625,7 +58625,7 @@
   },
   {
     "id": "4329",
-    "name": "\"Kaulana \"\"Toji\"\" Reinhardt\"",
+    "name": "Kaulana 'Toji' Reinhardt",
     "date": "2018-12-23",
     "armed": "gun",
     "age": "",
@@ -58730,7 +58730,7 @@
   },
   {
     "id": "4333",
-    "name": "\"Mark Wade \"\"Cornbread\"\" Luttrell\"",
+    "name": "Mark Wade 'Cornbread' Luttrell",
     "date": "2018-12-28",
     "armed": "gun",
     "age": "34",
@@ -66185,7 +66185,7 @@
   },
   {
     "id": "4834",
-    "name": "\"Terry Allen \"\"Bubba\"\" Payne\"",
+    "name": "Terry Allen 'Bubba' Payne",
     "date": "2019-07-01",
     "armed": "gun",
     "age": "52",
@@ -72382,8 +72382,8 @@
     "id": "5384",
     "name": "Jordan Oliver",
     "date": "2019-12-01",
-    "armed": "\"car",
-    "age": " knife and mace\"",
+    "armed": "car",
+    "age": " knife and mace",
     "gender": "20",
     "race": "M",
     "state": "W",
