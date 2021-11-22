@@ -3,6 +3,13 @@ const fs = require('fs');
 let finalData = [];
 let rawData_csv = fs.readFileSync('fatal-police-shootings-data.csv', 'utf8');
 let policeData = rawData_csv.split("\n");
+let arrayOfStateNames = ["AK","AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA","HI","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY"];
+let arrayOfEachStatesData = [];
+let ak = [];
+
+arrayOfStateNames.forEach(function(current){
+  arrayOfEachStatesData.push([]); // adding a blank array in each indice, and each indice in this array of arrays will then be converted to its own json file
+});
 
 policeData.forEach(function(data) {
   let raw_info = data.split(',');
@@ -25,10 +32,16 @@ policeData.forEach(function(data) {
     personData['latitude'] = [];
   }
 
-
   finalData.push(personData);
 
-
+  arrayOfStateNames.forEach(function(currentOne,index){
+    if(raw_info[7] === currentOne){
+      arrayOfEachStatesData[index].push(personData);
+    }
+  });
 });
 
 fs.writeFileSync('crime2.json', JSON.stringify(finalData), 'utf8');
+arrayOfStateNames.forEach(function(currentV,index){
+  fs.writeFileSync(''+currentV+'.json',JSON.stringify(arrayOfEachStatesData[index]),'utf8');
+});

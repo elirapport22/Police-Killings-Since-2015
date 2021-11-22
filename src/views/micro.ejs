@@ -2,47 +2,124 @@
 <html lang = "en">
 
 <head>
-  <meta charset = "utf-8"/>
+  <meta charset="utf-8">
   <title>Micrographics</title>
   <meta name = "author" content = "Eli Rapport and Musa Jallow">
   <meta name = "description" content = "Infographics">
-  <link rel = "stylesheet" href = "../css/styles.css">
+  <!-- <link rel = "stylesheet" href = "../css/styles.css"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
+  <style>
+    .bar{fill: steelblue;}
+    .bar:hover{fill:brown;}
+    .axis--x path{
+      display: none;
+    }
+  </style>
+
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="about.html">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  
+<%- include('../src/views/partials/navbar.ejs') %>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="about.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="about.html">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="about.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="about.html">Action</a>
-          <a class="dropdown-item" href="about.html">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="about.html">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="about.html">Disabled</a>
-      </li>
-    </ul>
-  </div>
-  </nav>
+
+
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <p>Micro infographics are a work in progress.</p>
+  <p><%= data[2].name %></p>
+
+  <%var totalcount=0%>
+  <%var whiteCount=0%>
+  <%var blackCount=0%>
+  <%var asianCount=0%>
+  <%var hispanicCount=0%>
+  <%var otherCount=0%>
+  <%var noMentalIllnessCount=0%>
+  <%var noThreatCount=0%>
+  <%var noFleeCount=0%>
+  <%var unArmedCount=0%>
+
+  <% for(let i of data){ %>
+    <%totalcount = totalcount + 1%>
+    <%if(i.race === "W"){whiteCount = whiteCount + 1}%>
+    <%if(i.race === "B"){blackCount = blackCount + 1}%>
+    <%if(i.race === "A"){asianCount = asianCount + 1}%>
+    <%if(i.race === "H"){hispanicCount = hispanicCount + 1}%>
+    <%if(i.race === "O"){otherCount = otherCount + 1}%>
+    <%if(i.mental_illness === "FALSE"){noMentalIllnessCount = noMentalIllnessCount + 1}%>
+    <%if(i.threat_level !== "attack"){noThreatCount = noThreatCount + 1}%>
+    <%if(i.flee === "Not fleeing"){noFleeCount = noFleeCount + 1}%>
+    <%if(i.armed === "unarmed"){unArmedCount = unArmedCount + 1}%>
+  <%}%>
+  <p><%= "totalcount:"+totalcount %></p>
+  <p><%= "whiteCount:"+whiteCount %></p>
+  <p><%= "blackCount:"+blackCount %></p>
+  <p><%= "asianCount:"+asianCount %></p>
+  <p><%= "hispanicCount:"+hispanicCount %></p>
+  <p><%= "noMentalIllnessCount:"+noMentalIllnessCount %></p>
+  <p><%= "noThreatCount:"+noThreatCount %></p>
+  <p><%= "noFleeCount:"+noFleeCount %></p>
+  <p><%= "unArmedCount:"+unArmedCount %></p>
+
+
+  <svg width="960" height="500"></svg>
+    <!-- <script src="../src/js/micro.js"></script> -->
+
+<script>
+// var count;
+// for(i in data){
+//   count = count + 1;
+// }
+  var dataset = [200,100,56,120,180,30,40,120,160];
+  var svg = d3.select("svg");
+  var margin = {top: 20, right: 20, bottom: 30, left: 40};
+  var width = +svg.attr("width") - margin.left - margin.right;
+  var height = +svg.attr("height") - margin.top - margin.bottom;
+
+  var x = d3.scaleBand().rangeRound([0,width]).padding(.1),
+      y = d3.scaleLinear().rangeRound([height,0]),
+      g = svg.append("g")
+        .attr("transform","translate("+margin.left+","+margin.top+")");
+
+  d3.csv("https://raw.githubusercontent.com/alex-rind/viztutorial/master/diabetes-small.csv")
+    .then((data) => {
+      return data.map((d) => {
+        d.BMI = +d.BMI;
+
+        return d;
+      });
+    })
+    .then((data) => {
+      x.domain(data.map(function(d) {return d.Name; }));
+      y.domain([0,d3.max(data,function(d){return d.BMI;})]);
+      g.append("g")
+        .attr("class","axis axis--x")
+        .attr("transofrm","translate(0,"+height+")")
+        .call(d3.axisBottom(x));
+      g.append("g")
+        .attr("class","axis axis--y")
+        .call(d3.axisLeft(y))
+        .append("text")
+        .attr("transform","rotate(-90)")
+        .attr("y",6)
+        .attr("dy","0.71em")
+        .attr("text-anchor","end")
+        .text("frequency");
+    g.selectAll(".bar")
+      .data(data)
+      .enter().append("rect")
+      .attr("class","bar")
+      .attr("x",function(d){return x(d.Name);})
+      .attr("y",function(d){return y(d.BMI);})
+      .attr("width",x.bandwidth())
+      .attr("height",function(d){return height - y(d.BMI);});
+    })
+    .catch((error) =>{
+      throw error;
+    });
+</script>
+
+
 </body>
