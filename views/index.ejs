@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Fatal Police Shootings</title>
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'><link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+  <script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <%- include('partials/navbar.ejs') %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+</head>
+
+<script>
+d3.json('crime.json', function(err, rows){
+    function unpack(rows, key) {
+        let newrows = rows.slice();
+        return newrows.map(function(row) { return row[key]; });
+    }
+    function getinfo(rows) {
+        let newrows2 = rows.slice();
+        return newrows2.map(function(row) { return 'Name: '+row['name']+'<br> Date: '+row['date']+'<br> Age: '+row['age']+'<br> Gender: '+row['gender']+'<br> Race: '+row['race']+'<br> Armed: '+row['armed']+'<br> Mental Ilness: '+row['mental_illness']+
+        '<br> Threat Level: '+row['threat_level']+'<br> Flee: '+row['flee']; });
+    }
+    var scl = [[0,'rgb(5, 10, 172)'],[0.35,'rgb(140, 60, 190)'],[0.5,'rgb(70, 100, 245)'], [0.6,'rgb(90, 20, 245)'],[0.7,'rgb(106, 137, 247)'],[1,'rgb(220, 220, 220)']];
+    var macrodata = [{
+        type:'scattergeo',
+        locationmode: 'USA-states',
+        customdata: ['3','5','6','9','2'],
+        lon: unpack(rows, 'longitude'),
+        lat: unpack(rows, 'latitude'),
+        hovertext: getinfo(rows),
+        hoverinfo:  'text',
+        mode: 'markers',
+        marker: {
+            size: 2,
+            opacity: 0.5,
+            reversescale: true,
+            autocolorscale: false,
+            symbol: 'circle',
+            line: {
+                width: .5,
+                color: 'rgb(102,102,102)'
+            },
+            colorscale: scl,
+            cmin: 0,
+            color: unpack(rows, 'age'),
+            colorbar: {
+                title: 'Victim Age (Years)'
+            }
+        }
+    }];
+
+    var macrolayout = {
+        title: 'Fatal Police Shootings in the US',
+        colorbar: true,
+        margin:{
+          b: 0,
+          l:0,
+          r:0,
+          t:100
+        },
+        height:700,
+
+        // width:1000,
+        // autosize:false,
+        geo: {
+            scope: 'usa',
+            projection: {
+                type: 'albers usa'
+            },
+            showland: true,
+            landcolor: 'rgb(250,250,250)',
+            subunitcolor: 'rgb(200,0,0)',
+            countrycolor: 'rgb(217,217,217)',
+            width: 1,
+            subunitwidth: 1
+
+        }
+    };
+    Plotly.newPlot("macromyDiv", macrodata, macrolayout, {showLink: false});
+});
+</script>
+
+
+
+<main>
+  <section id="home" class="d-flex align-items-center position-relative vh-100 cover hero">
+      <div class="container-fluid container-fluid-max2">
+        <body2 style="--n-rows: 6; --n-cols: 18">
+          <style>.hex-cell:nth-of-type(17n + 1) { grid-column-start: 2 }</style>
+          <div class="hex-cell"><img src="/Alexis Wilson.jpeg"/></div>
+          <div class="hex-cell"><img src="/Mathew Oxendine.jpeg"/></div>
+          <div class="hex-cell"><img src="/Josh Sarrett.jpeg"/></div>
+          <div class="hex-cell"><img src="/Betty Sexton.jpeg"/></div>
+          <div class="hex-cell"><img src="/Bodhi Wilson Dean Phelps.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Antwun Shumpert.jpeg"/></div>
+          <div class="hex-cell"><img src="/Brian Marksberry.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Jacy Kevin McManus.png"/></div>
+          <div class="hex-cell"><img src="/Chad Michael Breinholt.jpeg"/></div>
+          <div class="hex-cell"><img src="/Charly Leundeu Keunang.jpeg"/></div>
+          <div class="hex-cell"><img src="/CHet Knuppel.jpeg"/></div>
+          <div class="hex-cell"><img src="/Bertrand Davis.jpeg"/></div>
+          <div class="hex-cell"><img src="/Isaiah Lewis.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Artago Damon Howard.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Jonathan David Victor.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Danny Thomas.jpeg"/></div>
+          <div class="hex-cell"><img src="/Christopher Sowell.jpeg"/></div>
+          <div class="hex-cell"><img src="/Jonathan Price.png"/></div>
+          <div class="hex-cell"><img src="/Jose Roman Rodriguez.jpeg"/></div>
+          <div class="hex-cell"><img src="/Jeremy Mardis.jpeg"/></div>
+          <div class="hex-cell"><img src="/Brian Easley.jpeg"/></div>
+          <div class="hex-cell"><img src="/Katlyn Alix.jpeg"/></div>
+          <div class="hex-cell"><img src="/Autumn Steele.jpeg"/></div>
+          <div class="hex-cell"><img src="/Pedro Cruz-Amado.jpeg"/></div>
+          <div class="hex-cell"><img src="/Renee Davis.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Michael Renfroe.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Antonio Zambrano-Montes.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Alfreed Olango.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Ulises Valladares.jpeg"/></div>
+          <div class="hex-cell"><img src="/Deven Guilford.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Corey Mobley.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Cynthia Fields.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Daniel Covarrubias.jpeg"/></div>
+          <div class="hex-cell"><img src="/Detric Driver.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Farhad Jabbari.png"/></div>
+          <div class="hex-cell"><img src="/1Frankie Anchondo.jpeg"/></div>
+          <div class="hex-cell"><img src="/Fanta Bility.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Jesse J. Quinton.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Ahmaud Arbery.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Justine Damond.jpg"/></div>
+          <div class="hex-cell"><img src="/1Kevin Mathews.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Marzeus Scott.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Juan Manuel Moreno.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Miguel Espinal.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Nicholas Bils.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Peter Gaines.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Rashaun Washington.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Richard Solitro.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Terence Crutcher.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Timothy Daniel Statham.jpeg"/></div>
+          <div class="hex-cell"><img src="/1Antronie Scott.jpeg"/></div>
+
+          <div class="row text-block">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5 typewriter">
+              <h1 class="text-white">Tracking Police Killings in the U.S. Since 2015</h1>
+              <div class="mt-3">
+                <!-- <a class="btn bg-red text-white mr-2" href="" role="button">Button 1</a> -->
+                <a class="btn btn-primary text-white" target="_blank" href="" role="button">Button 1</a>
+                <a class="btn btn-primary text-white" target="_blank" href="" role="button">Button 2</a>
+              </div>
+            </div>
+          </div>
+        </body2>
+    </section>
+
+    <section id="summary" class="summary">
+      <div class="container-fluid container-fluid-max">
+        <div class="row text-center py-5">
+          <div>
+            <p class="text-red" style="font-size: 145%;">3-4 sentence with descriptive summary of project --> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="featured-destinations" class="featured-destinations bg-lightblue">
+      <div class="row no-gutters">
+        <div class="col-12 col-md-9 order-2">
+
+            <div id = "macromyDiv"></div>
+
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-center order-3" style="background-color:#0c040c;">
+          <div class="p-15">
+
+            <!-- With number fields -->
+            <div class="filter level-filter level-req">
+              <div id="rangeSlider" class="range-slider">
+
+                <label>Time Range:</label>
+
+                <div class="number-group">
+                  <input class="number-input" type="number" value="2015" min="2015" max="2021"/> to
+                  <input class="number-input" type="number" value="2021" min="2015" max="2021"/>
+                </div>
+
+                <div class="range-group">
+                  <input class="range-input" value="2015" min="2015" max="2021" step="1" type="range"/>
+                  <input class="range-input" value="2021" min="2015" max="2021" step="1" type="range"/>
+                </div>
+              </div>
+            </div><!-- // filter level-filter -->
+
+
+            <br>
+            <h3 style="text-align: center; color:#d6d6d6;"><u>U.S. Overall</u></h3>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> had <span style="color:#3eb0fa;"><strong>no</strong></span> signs of <span style="color:#3eb0fa;"><strong>mental illness</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> were <span style="color:#3eb0fa;"><strong>not fleeing</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> were <span style="color:#3eb0fa;"><strong>unarmed</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> were under <span style="color:#3eb0fa;"><strong>21</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> were under <span style="color:#3eb0fa;"><strong>30</strong></span>.</p>
+
+
+
+            <p style="text-align: center; color:#d6d6d6;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+              mollitia animi, id est laborum et dolorum fuga.</p>
+            <a class="btn btn-outline-primary text-white" target="_blank" href="https://en.wikipedia.org/wiki/Neuschwanstein_Castle" role="button">Read More →</a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="process" class="process">
+      <div class="container-fluid container-fluid-max">
+        <div class="row text-center py-5">
+          <div class="col-12 pb-4">
+            <h2 class="text-red">BULLET POINT SECTION PLACEHOLDER</h2>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x">
+              <i class="fas fa-circle fa-stack-2x text-red"></i>
+              <i class="fas fa-map-marked fa-stack-1x text-white"></i>
+            </span>
+            <h3 class="mt-3 text-red h4">POINT 1</h3>
+            <p class="text-red">Lorem ipsum dolor sit amet consectetur adipisicing elit sed repudiandae.</p>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x">
+              <i class="fas fa-circle fa-stack-2x text-red"></i>
+              <i class="fas fa-plane fa-stack-1x text-white"></i>
+            </span>
+            <h3 class="mt-3 text-red h4">POINT 2</h3>
+            <p class="text-red">Lorem ipsum dolor sit amet consectetur adipisicing elit sed repudiandae.</p>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x">
+              <i class="fas fa-circle fa-stack-2x text-red"></i>
+              <i class="fas fa-car fa-stack-1x text-white"></i>
+            </span>
+            <h3 class="mt-3 text-red h4">POINT 3</h3>
+            <p class="text-red">Nor again is there anyone who loves or pursues or desires to obtain pain.</p>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x">
+              <i class="fas fa-circle fa-stack-2x text-red"></i>
+              <i class="fas fa-home fa-stack-1x text-white"></i>
+            </span>
+            <h3 class="mt-3 text-red h4">POINT 4</h3>
+            <p class="text-red">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.</p>
+          </div>
+          <div class="col-12 pt-3">
+            <!-- <a class="btn bg-red text-white" target="_blank" href="https://en.wikipedia.org/wiki/Neuschwanstein_Castle" role="button">Learn More →</a> -->
+            <a class="btn btn-outline-primary text-white" target="_blank" href="about.html" role="button">Learn More →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+  <!-- <p><%= data[2].name %></p> -->
+    <%- include('partials/footer.ejs') %>
+</main>
+
+
+
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script><script  src="/script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="/script2.js"></script>
