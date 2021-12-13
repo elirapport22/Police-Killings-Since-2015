@@ -6,120 +6,704 @@
   <title>Micrographics</title>
   <meta name = "author" content = "Eli Rapport and Musa Jallow">
   <meta name = "description" content = "Infographics">
-  <!-- <link rel = "stylesheet" href = "../css/styles.css"> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'><link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
-  <style>
-    .bar{fill: steelblue;}
-    .bar:hover{fill:brown;}
-    .axis--x path{
-      display: none;
-    }
-  </style>
-
+	<script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+  <%- include('partials/navbar.ejs') %>
 </head>
 
-<body>
-  
-<%- include('../src/views/partials/navbar.ejs') %>
+<main>
+<%var stateBlack = parseFloat(stateracedata.black)%>
+<%var stateWhite = parseFloat(stateracedata.white)%>
+<%var stateHispanic = parseFloat(stateracedata.hispanic)%>
+<%var stateAsian = parseFloat(stateracedata.asian)%>
+<%var stateNativeAmerican = parseFloat(stateracedata.americanindian_alaskanative)%>
+<%var PREnativehawaiian_pacificislander = parseFloat(stateracedata.nativehawaiian_pacificislander)%>
+<%var PREmultiracial = parseFloat(stateracedata.multiracial)%>
+<%var stateOther = parseFloat(stateracedata.multiracial) + parseFloat(stateracedata.nativehawaiian_pacificislander) %>
+
+
+<%var usstateBlack = parseFloat(usracedata.black)%>
+<%var usstateWhite = parseFloat(usracedata.white)%>
+<%var usstateHispanic = parseFloat(usracedata.hispanic)%>
+<%var usstateAsian = parseFloat(usracedata.asian)%>
+<%var usstateNativeAmerican = parseFloat(usracedata.americanindian_alaskanative)%>
+<%var usstateOther = parseFloat(usracedata.multiracial) + parseFloat(usracedata.nativehawaiian_pacificislander) %>
 
 
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <p>Micro infographics are a work in progress.</p>
-  <p><%= data[2].name %></p>
+<%var totalcount=0%>
+<%var whiteCount=0%>
+<%var blackCount=0%>
+<%var asianCount=0%>
+<%var hispanicCount=0%>
+<%var nativeCount = 0%>
+<%var otherCount=0%>
+<%var noMentalIllnessCount=0%>
+<%var noThreatCount=0%>
+<%var noFleeCount=0%>
+<%var unarmedCount=0%>
+<%var unknownCount = 0%>
+<% for(let i of data){ %>
+  <%totalcount = totalcount + 1%>
+  <%if(i.race == "W"){whiteCount = whiteCount + 1}%>
+  <%if(i.race == "B"){blackCount = blackCount + 1}%>
+  <%if(i.race == "A"){asianCount = asianCount + 1}%>
+  <%if(i.race == "H"){hispanicCount = hispanicCount + 1}%>
+  <%if(i.race == "O" ){otherCount = otherCount + 1}%>
+  <%if(i.mental_illness == "FALSE"){noMentalIllnessCount = noMentalIllnessCount + 1}%>
+  <%if(i.threat_level !== "attack"){noThreatCount = noThreatCount + 1}%>
+  <%if(i.flee == "Not fleeing"){noFleeCount = noFleeCount + 1}%>
+  <%if(i.armed == "unarmed"){unarmedCount = unarmedCount + 1}%>
+  <%if(i.race == ""){unknownCount = unknownCount + 1}%>
+  <%if(i.race == "N"){nativeCount = nativeCount + 1}%>
+  <%var filename = i.state%>
+<%}%>
 
-  <%var totalcount=0%>
-  <%var whiteCount=0%>
-  <%var blackCount=0%>
-  <%var asianCount=0%>
-  <%var hispanicCount=0%>
-  <%var otherCount=0%>
-  <%var noMentalIllnessCount=0%>
-  <%var noThreatCount=0%>
-  <%var noFleeCount=0%>
-  <%var unArmedCount=0%>
+<%var UStotalcount=0%>
+<%var USwhiteCount=0%>
+<%var USblackCount=0%>
+<%var USasianCount=0%>
+<%var UShispanicCount=0%>
+<%var USnativeCount = 0%>
+<%var USotherCount=0%>
+<%var USnoMentalIllnessCount=0%>
+<%var USnoThreatCount=0%>
+<%var USnoFleeCount=0%>
+<%var USunarmedCount=0%>
+<%var USunknownCount = 0%>
+<% for(let i of USdata){ %>
+  <%UStotalcount = UStotalcount + 1%>
+  <%if(i.race == "W"){USwhiteCount = USwhiteCount + 1}%>
+  <%if(i.race == "B"){USblackCount = USblackCount + 1}%>
+  <%if(i.race == "A"){USasianCount = USasianCount + 1}%>
+  <%if(i.race == "H"){UShispanicCount = UShispanicCount + 1}%>
+  <%if(i.race == "O" ){USotherCount = USotherCount + 1}%>
+  <%if(i.mental_illness == "FALSE"){USnoMentalIllnessCount = USnoMentalIllnessCount + 1}%>
+  <%if(i.threat_level !== "attack"){USnoThreatCount = USnoThreatCount + 1}%>
+  <%if(i.flee == "Not fleeing"){USnoFleeCount = USnoFleeCount + 1}%>
+  <%if(i.armed == "unarmed"){USunarmedCount = USunarmedCount + 1}%>
+  <%if(i.race == ""){USunknownCount = USunknownCount + 1}%>
+  <%if(i.race == "N"){USnativeCount = USnativeCount + 1}%>
+<%}%>
 
-  <% for(let i of data){ %>
-    <%totalcount = totalcount + 1%>
-    <%if(i.race === "W"){whiteCount = whiteCount + 1}%>
-    <%if(i.race === "B"){blackCount = blackCount + 1}%>
-    <%if(i.race === "A"){asianCount = asianCount + 1}%>
-    <%if(i.race === "H"){hispanicCount = hispanicCount + 1}%>
-    <%if(i.race === "O"){otherCount = otherCount + 1}%>
-    <%if(i.mental_illness === "FALSE"){noMentalIllnessCount = noMentalIllnessCount + 1}%>
-    <%if(i.threat_level !== "attack"){noThreatCount = noThreatCount + 1}%>
-    <%if(i.flee === "Not fleeing"){noFleeCount = noFleeCount + 1}%>
-    <%if(i.armed === "unarmed"){unArmedCount = unArmedCount + 1}%>
-  <%}%>
-  <p><%= "totalcount:"+totalcount %></p>
-  <p><%= "whiteCount:"+whiteCount %></p>
-  <p><%= "blackCount:"+blackCount %></p>
-  <p><%= "asianCount:"+asianCount %></p>
-  <p><%= "hispanicCount:"+hispanicCount %></p>
-  <p><%= "noMentalIllnessCount:"+noMentalIllnessCount %></p>
-  <p><%= "noThreatCount:"+noThreatCount %></p>
-  <p><%= "noFleeCount:"+noFleeCount %></p>
-  <p><%= "unArmedCount:"+unArmedCount %></p>
+<%let arrayOfStateNames = ["AK","AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA","HI","IA","ID","IL","IN","KS","KY","LA","ME","MD","MA","MI","MN","MO","MS","MT","NC","ND","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA","WV","WI","WY"];%>
+<%var stateInitials=data[2].state;%>
 
-
-  <svg width="960" height="500"></svg>
-    <!-- <script src="../src/js/micro.js"></script> -->
-
-<script>
-// var count;
-// for(i in data){
-//   count = count + 1;
-// }
-  var dataset = [200,100,56,120,180,30,40,120,160];
-  var svg = d3.select("svg");
-  var margin = {top: 20, right: 20, bottom: 30, left: 40};
-  var width = +svg.attr("width") - margin.left - margin.right;
-  var height = +svg.attr("height") - margin.top - margin.bottom;
-
-  var x = d3.scaleBand().rangeRound([0,width]).padding(.1),
-      y = d3.scaleLinear().rangeRound([height,0]),
-      g = svg.append("g")
-        .attr("transform","translate("+margin.left+","+margin.top+")");
-
-  d3.csv("https://raw.githubusercontent.com/alex-rind/viztutorial/master/diabetes-small.csv")
-    .then((data) => {
-      return data.map((d) => {
-        d.BMI = +d.BMI;
-
-        return d;
-      });
-    })
-    .then((data) => {
-      x.domain(data.map(function(d) {return d.Name; }));
-      y.domain([0,d3.max(data,function(d){return d.BMI;})]);
-      g.append("g")
-        .attr("class","axis axis--x")
-        .attr("transofrm","translate(0,"+height+")")
-        .call(d3.axisBottom(x));
-      g.append("g")
-        .attr("class","axis axis--y")
-        .call(d3.axisLeft(y))
-        .append("text")
-        .attr("transform","rotate(-90)")
-        .attr("y",6)
-        .attr("dy","0.71em")
-        .attr("text-anchor","end")
-        .text("frequency");
-    g.selectAll(".bar")
-      .data(data)
-      .enter().append("rect")
-      .attr("class","bar")
-      .attr("x",function(d){return x(d.Name);})
-      .attr("y",function(d){return y(d.BMI);})
-      .attr("width",x.bandwidth())
-      .attr("height",function(d){return height - y(d.BMI);});
-    })
-    .catch((error) =>{
-      throw error;
-    });
-</script>
+<%let stateinitialindex = arrayOfStateNames.indexOf(stateInitials);%>
+<%let statebeforeinitial = arrayOfStateNames[stateinitialindex-1]+'.html';%>
+<%let stateafterinitial = arrayOfStateNames[stateinitialindex+1]+'.html';%>
 
 
-</body>
+<a class="btn btn-primary btn-lg" target="_blank" href="<%=statebeforeinitial%>" role="button">Previous Before</a>
+<a class="btn btn-primary btn-lg" target="_blank" href="<%=stateafterinitial%>" role="button">Next After</a>
+<!-- <button type="button" class="btn btn-primary btn-lg">Large button</button>
+<button type="button" class="btn btn-secondary btn-lg">Large button</button> -->
+
+
+<div class="text-center py-5">
+<%- include('partials/header.ejs') %> <br>
+</div>
+  <section id="summary" class="summary">
+        <div class="container-fluid container-fluid-max">
+          <div class="row text-center py-5">
+            <div>
+              <p class="text-red" style="font-size: 145%;">
+                Here were some of the takeaways from this state's data:
+                There were <%=whiteCount%> White victims.
+                There were <%=blackCount%> Black victims.
+                There were <%=hispanicCount%> Hispanic/Latine victims.
+                There were: <%=asianCount%> Asian victims.
+                There were: <%=nativeCount%> Native American victims.
+                There were <%=otherCount%> victims of another race.
+                There were  <%=unknownCount%> victims of an unknown or unconfirmed race.
+                <%=(Math.round(noMentalIllnessCount/totalcount * 10000)*.01).toFixed(1)%>% of victims had no signs of mental illness.
+                <%=(Math.round(noThreatCount/totalcount * 10000)*.01).toFixed(1)%>% of victims were not attacking the police officer.
+                <%=(Math.round(noFleeCount/totalcount * 10000)*.01).toFixed(1)%>% of victims were not fleeing the scene.
+                <%=(Math.round(unarmedCount/totalcount * 10000)*.01).toFixed(1)%>% of victims were unarmed.
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <section id="featured-destinations" class="featured-destinations bg-lightblue">
+      <div class="row" style="padding:0px; background-color:#0c040c;">
+        <div class="col-12 col-md-6 order-2" style="background-color:#0c040c; padding-left:70px;">
+          <!-- <h1 class="text-red text-center" style="font-size: 145%;">STATE NAME</h1> -->
+          <!-- <img class="img-fluid" src="../images/macromap.png" style="object-fit:contain;"> -->
+          <div id = 'myDiv'>
+            <script defer>
+              var race1 = {
+                x: ['race'],
+                y: [<%=whiteCount%>],
+                name: 'White',
+                textposition: 'middle center',
+                text: <%= (Math.round(whiteCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(32,116,180)']
+                },
+              };
+              var race2 = {
+                x: ['race'],
+                y: [<%=blackCount%>],
+                name: 'Black',
+                textposition: 'middle center',
+                text: <%= (Math.round(blackCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(256,124,12)']
+                },
+              };
+              var race3 = {
+                x: ['race'],
+                y: [<%=asianCount%>],
+                name: 'Asian',
+                textposition: 'middle center',
+                text: <%= (Math.round(asianCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(48,164,44)']
+                },
+              };
+              var race4 = {
+                x: ['race'],
+                y: [<%=hispanicCount%>],
+                name: 'Hispanic/Latine',
+                textposition: 'middle center',
+                text: <%= (Math.round(hispanicCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(216,44,36)']
+                },
+              };
+              var race5 = {
+                x: ['race'],
+                y: [<%=otherCount%>],
+                name: 'Other',
+                textposition: 'middle center',
+                text: <%= (Math.round(otherCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(152,100,188)']
+                },
+
+              };
+              var race6 = {
+                x: ['race'],
+                y: [<%=unknownCount%>],
+                name: 'Unknown',
+                textposition: 'middle center',
+                text: <%= (Math.round(unknownCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(144,84,76)']
+                },
+              };
+              var race7 = {
+              x: ['race'],
+              y: [<%=nativeCount%>],
+              name: 'Native American',
+              textposition: 'middle center',
+              text: <%= Math.round(nativeCount/totalcount * 10000)*.01%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(240, 240, 240)']
+              },
+            };
+            var race1_state = {
+              x: ['race_state'],
+              y: [<%=stateWhite * totalcount%>],
+              name: 'White (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(stateWhite * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(32,116,180)']
+              },
+              showlegend:false
+            };
+            var race2_state = {
+              x: ['race_state'],
+              y: [<%=stateBlack * totalcount%>],
+              name: 'Black (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(stateBlack * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(256,124,12)']
+              },
+              showlegend:false
+            };
+            var race3_state = {
+              x: ['race_state'],
+              y: [<%=stateAsian * totalcount%>],
+              name: 'Asian (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(stateAsian * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(48,164,44)']
+              },
+              showlegend:false
+            };
+            var race4_state = {
+              x: ['race_state'],
+              y: [<%=stateHispanic * totalcount%>],
+              name: 'Hispanic/Latine (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(stateHispanic * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(216,44,36)']
+              },
+              showlegend:false
+            };
+            var race5_state = {
+              x: ['race_state'],
+              y: [<%=stateOther * totalcount%>],
+              name: 'Other (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(stateOther * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(152,100,188)']
+              },
+              showlegend:false
+
+            };
+            var race6_state = {
+              x: ['race_state'],
+              y: [<%=0%>], //there was not a category for this in the demogrpahic data so we make heigth 0
+              name: 'Unconfirmed (state demographic %)',
+              textposition: 'middle center',
+              text: <%= stateOther * 100%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(144,84,76)']
+              },
+              showlegend:false
+            };
+
+            var race7_state = {
+            x: ['race_state'],
+            y: [<%=stateNativeAmerican * totalcount%>],
+            name: 'Native American (state demographic %)',
+            textposition: 'middle center',
+            text: <%= (Math.round(stateNativeAmerican * 10000)*.01).toFixed(4)%> + "%",
+            width: [0.7],
+            type: 'bar',
+            marker:{
+              color: ['rgb(240, 240, 240)']
+            },
+            showlegend:false
+            };
+
+              var health = {
+                x:['% with No Signs of Mental Illness'],
+                y:[<%= noMentalIllnessCount%>],
+                name: 'No Mental Illness',
+                textposition: 'middle center',
+                text: <%= (Math.round(noMentalIllnessCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                dx:2,
+                marker:{
+                  color: ['rgb(81, 195, 219)']
+                },
+              };
+
+              var noThreat = {
+                x:["% Not Attacking"],
+                y:[<%=noThreatCount%>],
+                name: 'Not Attacking',
+                textposition: 'middle center',
+                text: <%= (Math.round(noThreatCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(189, 30, 110)']
+                },
+              };
+
+              var noFlee = {
+                x:["% Not Fleeing"],
+                y:[<%=noFleeCount%>],
+                name: 'Not Fleeing',
+                textposition: 'middle center',
+                text: <%= (Math.round(noFleeCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(225, 189, 4)']
+                },
+
+              };
+
+              var unarmed = {
+                x:["% unarmed"],
+                y:[<%=unarmedCount%>],
+                name: 'Unarmed',
+                textposition: 'middle center',
+                text: <%= (Math.round(unarmedCount/totalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                // offset:-.5,
+                marker:{
+                  color: ['rgb(74, 23, 79)']
+                },
+              };
+
+
+              var data = [race1,race1_state, race2,race2_state, race3, race3_state, race4, race4_state, race5, race5_state, race6, race6_state,race7,race7_state, health, noThreat,noFlee,unarmed];
+              var layout = {title: '<%=stateName%>',titlefont:{size:40}, barmode: 'stack',height:600, xaxis:{tickcolor:'#d6d6d6',title:'Category of Consideration'}, yaxis:{gridcolor:'#444',title:'# of individuals'}, showlegend:true,paper_bgcolor:'#0c040c',plot_bgcolor:'#0c040c', margin: {l:60,b:130,r:10}, font: {size:12, color:'#d6d6d6'},grid: {subplots: {height:300}}, legend:{font:{size:10}} };
+              Plotly.newPlot('myDiv', data, layout);
+            </script>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 order-2" style="background-color:#0c040c; padding-left:70px;">
+          <!-- <h1 class="text-red text-center" style="font-size: 145%;">U.S. Overall</h1> -->
+          <!-- <img class="img-fluid" src="../images/macromap.png" > -->
+          <div id = 'USmyDiv'>
+            <script defer>
+              var USrace1 = {
+                x: ['race'],
+                y: [<%=USwhiteCount%>],
+                name: 'White',
+                textposition: 'middle center',
+                text: <%= (Math.round(USwhiteCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(32,116,180)']
+                },
+              };
+              var USrace2 = {
+                x: ['race'],
+                y: [<%=USblackCount%>],
+                name: 'Black',
+                textposition: 'middle center',
+                text: <%= (Math.round(USblackCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(256,124,12)']
+                },
+              };
+              var USrace3 = {
+                x: ['race'],
+                y: [<%=USasianCount%>],
+                name: 'Asian',
+                textposition: 'middle center',
+                text: <%= (Math.round(USasianCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(48,164,44)']
+                },
+              };
+              var USrace4 = {
+                x: ['race'],
+                y: [<%=UShispanicCount%>],
+                name: 'Hispanic/Latine',
+                textposition: 'middle center',
+                text: <%= (Math.round(UShispanicCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(216,44,36)']
+                },
+              };
+              var USrace5 = {
+                x: ['race'],
+                y: [<%=USotherCount%>],
+                name: 'Other',
+                textposition: 'middle center',
+                text: <%= (Math.round(USotherCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(152,100,188)']
+                },
+
+              };
+              var USrace6 = {
+                x: ['race'],
+                y: [<%=USunknownCount%>],
+                name: 'Unknown',
+                textposition: 'middle center',
+                text: <%= (Math.round(USunknownCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(144,84,76)']
+                },
+              };
+              var USrace7 = {
+              x: ['race'],
+              y: [<%=USnativeCount%>],
+              name: 'Native American',
+              textposition: 'middle center',
+              text: <%= Math.round(USnativeCount/UStotalcount * 10000)*.01%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(240, 240, 240)']
+              },
+            };
+            var USrace1_state = {
+              x: ['race_country'],
+              y: [<%=usstateWhite * UStotalcount%>],
+              name: 'White (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(usstateWhite * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(32,116,180)']
+              },
+              showlegend:false
+            };
+            var USrace2_state = {
+              x: ['race_country'],
+              y: [<%=usstateBlack * UStotalcount%>],
+              name: 'Black (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(usstateBlack * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(256,124,12)']
+              },
+              showlegend:false
+            };
+            var USrace3_state = {
+              x: ['race_country'],
+              y: [<%=usstateAsian * UStotalcount%>],
+              name: 'Asian (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(usstateBlack * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(48,164,44)']
+              },
+              showlegend:false
+            };
+            var USrace4_state = {
+              x: ['race_country'],
+              y: [<%=usstateHispanic * UStotalcount%>],
+              name: 'Hispanic/Latine (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(usstateHispanic * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(216,44,36)']
+              },
+              showlegend:false
+            };
+            var USrace5_state = {
+              x: ['race_country'],
+              y: [<%=usstateOther * UStotalcount%>],
+              name: 'Other (state demographic %)',
+              textposition: 'middle center',
+              text: <%= (Math.round(usstateOther * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(152,100,188)']
+              },
+              showlegend:false
+            };
+            var USrace6_state = {
+              x: ['race_country'],
+              y: [<%=0%>],
+              name: 'Unconfirmed (state demographic %)', //there was not a category for this in the demogrpahic data so we make heigth 0
+              textposition: 'middle center',
+              text: <%= (Math.round(USunknownCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+              width: [0.7],
+              type: 'bar',
+              marker:{
+                color: ['rgb(144,84,76)']
+              },
+              showlegend:false
+            };
+
+            var USrace7_state = {
+            x: ['race_country'],
+            y: [<%=usstateNativeAmerican * UStotalcount%>],
+            name: 'Native American (state demographic %)',
+            textposition: 'middle center',
+            text: <%= (Math.round(usstateNativeAmerican * 10000)*.01).toFixed(4)%> + "%",
+            width: [0.7],
+            type: 'bar',
+            marker:{
+              color: ['rgb(240, 240, 240)']
+            },
+            showlegend:false
+            };
+
+              var UShealth = {
+                x:['% with No Signs of Mental Illness'],
+                y:[<%= USnoMentalIllnessCount%>],
+                name: 'No Mental Illness',
+                textposition: 'middle center',
+                text: <%= (Math.round(USnoMentalIllnessCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                dx:2,
+                marker:{
+                  color: ['rgb(81, 195, 219)']
+                },
+              };
+
+              var USnoThreat = {
+                x:["% Not Attacking"],
+                y:[<%=USnoThreatCount%>],
+                name: 'Not Attacking',
+                textposition: 'middle center',
+                text: <%= (Math.round(USnoThreatCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(189, 30, 110)']
+                },
+              };
+
+              var USnoFlee = {
+                x:["% Not Fleeing"],
+                y:[<%=USnoFleeCount%>],
+                name: 'Not Fleeing',
+                textposition: 'middle center',
+                text: <%= (Math.round(USnoFleeCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                marker:{
+                  color: ['rgb(225, 189, 4)']
+                },
+
+              };
+
+              var USunarmed = {
+                x:["% unarmed"],
+                y:[<%=USunarmedCount%>],
+                name: 'Unarmed',
+                textposition: 'middle center',
+                text: <%= (Math.round(UShispanicCount/UStotalcount * 10000)*.01).toFixed(4)%> + "%",
+                width: [0.7],
+                type: 'bar',
+                // offset:-.5,
+                marker:{
+                  color: ['rgb(74, 23, 79)']
+                },
+              };
+
+              var USdata = [USrace1,USrace1_state, USrace2,USrace2_state, USrace3, USrace3_state, USrace4, USrace4_state, USrace5, USrace5_state, USrace6, USrace6_state,USrace7,USrace7_state, UShealth, USnoThreat,USnoFlee,USunarmed];
+              var USlayout = {title: 'U.S. Overall',titlefont:{size:40, color:'#d6d6d6'},barmode: 'stack',height:600, xaxis:{tickcolor:'#d6d6d6',title:'Category of Consideration'}, yaxis:{gridcolor:'#444',title:'# of individuals'}, showlegend:true,paper_bgcolor:'#0c040c',plot_bgcolor:'#0c040c', margin: {l:60,b:130,r:10}, font: {size:12, color:'#d6d6d6'},grid: {subplots: {height:300}}, legend:{font:{size:10}} };
+              Plotly.newPlot('USmyDiv', USdata, USlayout);
+            </script>
+          </div>
+        </div>
+        <!-- <div class="col-12 col-md-2 d-flex align-items-center order-3" style="background-color:#0c040c;">
+          <div style="padding-right:15px;">
+            <div class="filter level-filter level-req">
+              <div id="rangeSlider" class="range-slider">
+
+                <label>Time Range:</label>
+
+                <div class="number-group">
+                  <input class="number-input" type="number" value="2015" min="2015" max="2021"/> to
+                  <input class="number-input" type="number" value="2021" min="2015" max="2021"/>
+                </div>
+
+                <div class="range-group">
+                  <input class="range-input" value="2015" min="2015" max="2021" step="1" type="range"/>
+                  <input class="range-input" value="2021" min="2015" max="2021" step="1" type="range"/>
+                </div>
+              </div>
+            </div>
+
+
+            <br>
+            <h3 style="text-align: center; color:#d6d6d6;"><u>THIS STATE Overall</u></h3>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> had <span style="color:#3eb0fa;"><strong>no</strong></span> signs of <span style="color:#3eb0fa;"><strong>mental illness</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> were <span style="color:#3eb0fa;"><strong>not fleeing</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> were <span style="color:#3eb0fa;"><strong>unarmed</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> were under <span style="color:#3eb0fa;"><strong>21</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong>999%</strong></span> were under <span style="color:#3eb0fa;"><strong>30</strong></span>.</p>
+
+
+
+            <p style="text-align: center; color:#d6d6d6;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+              mollitia animi, id est laborum et dolorum fuga.</p>
+            <a class="btn btn-outline-primary text-white" target="_blank" href="https://en.wikipedia.org/wiki/Neuschwanstein_Castle" role="button">Read More →</a>
+
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <section id="process" class="process">
+      <div class="container-fluid container-fluid-max">
+        <div class="row text-center py-5">
+          <div class="col-12 pb-4">
+            <h2 class="text-red">Comparing <%=stateName%> to the U.S. overall</h2>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x">
+            </span>
+            <p class="text-red"> <%=(Math.round(blackCount/totalcount * 10000)*.01).toFixed(1)%> percent of the victims in <%=stateName%> were black compared to <%=(Math.round(USblackCount/UStotalcount * 10000)*.01).toFixed(1)%> percent in the US overall.</p>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x">
+            </span>
+            <p class="text-red"><%=(Math.round(whiteCount/totalcount * 10000)*.01).toFixed(1)%> percent of the victims in <%=stateName%> were white compared to <%=(Math.round(USwhiteCount/UStotalcount * 10000)*.01).toFixed(1)%> percent in the US overall.</p>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x">
+            </span>
+            <p class="text-red"><%=(Math.round(unarmedCount/totalcount * 10000)*.01).toFixed(1)%> percent of the victims in <%=stateName%> were unarmed compared to <%=(Math.round(USunarmedCount/UStotalcount * 10000)*.01).toFixed(1)%> percent in the US overall.</p>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x">
+            </span>
+            <p class="text-red"><%=(Math.round(noMentalIllnessCount/totalcount * 10000)*.01).toFixed(1)%> percent of the victims in [US state] did not show signs of mental illness compared to <%=(Math.round(USnoMentalIllnessCount/UStotalcount * 10000)*.01).toFixed(1)%> percent in the US overall.</p>
+          </div>
+          <div class="col-12 pt-3">
+            <!-- <a class="btn bg-red text-white" target="_blank" href="https://en.wikipedia.org/wiki/Neuschwanstein_Castle" role="button">Learn More →</a> -->
+            <!-- <a class="btn btn-outline-primary text-white" target="_blank" href="about.html" role="button">Learn More →</a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+<%- include('partials/footer.ejs') %>
+
+</main>
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script><script  src="/js/script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="/js/script2.js"></script>
+
+</html>

@@ -1,19 +1,315 @@
-<!doctype html>
-<html lang = "en">
-
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-  <meta charset = "utf-8"/>
+  <meta charset="UTF-8">
   <title>Fatal Police Shootings</title>
-  <meta name = "author" content = "Eli Rapport and Musa Jallow">
-  <meta name = "description" content = "Infographics">
-  <link rel = "stylesheet" href = "../css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-</head>
+      <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'>
+      <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'><link rel="stylesheet" href="/css/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
 </head>
 
-<body>
-  <%- include('../src/views/partials/navbar.ejs') %>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  <p>Macro infographic is a work in progress.</p>
-  <p><%= data[2].name %></p>
-</body>
+
+<%var totalcount=0%>
+<%var whiteCount=0%>
+<%var blackCount=0%>
+<%var asianCount=0%>
+<%var hispanicCount=0%>
+<%var nativeCount = 0%>
+<%var otherCount=0%>
+<%var noMentalIllnessCount=0%>
+<%var noThreatCount=0%>
+<%var noFleeCount=0%>
+<%var unarmedCount=0%>
+<%var unknownCount = 0%>
+<%var under21Count = 0%>
+<%var under30Count = 0%>
+<% for(let i of data){ %>
+  <%totalcount = totalcount + 1%>
+  <%if(i.race == "W"){whiteCount = whiteCount + 1}%>
+  <%if(i.race == "B"){blackCount = blackCount + 1}%>
+  <%if(i.race == "A"){asianCount = asianCount + 1}%>
+  <%if(i.race == "H"){hispanicCount = hispanicCount + 1}%>
+  <%if(i.race == "O" ){otherCount = otherCount + 1}%>
+  <%if(i.mental_illness == "FALSE"){noMentalIllnessCount = noMentalIllnessCount + 1}%>
+  <%if(i.threat_level !== "attack"){noThreatCount = noThreatCount + 1}%>
+  <%if(i.flee == "Not fleeing"){noFleeCount = noFleeCount + 1}%>
+  <%if(i.armed == "unarmed"){unarmedCount = unarmedCount + 1}%>
+  <%if(i.race == ""){unknownCount = unknownCount + 1}%>
+  <%if(i.race == "N"){nativeCount = nativeCount + 1}%>
+    <%if(parseInt(i.age) <= 21){under21Count = under21Count + 1}%>
+    <%if(parseInt(i.age) <= 30){under30Count = under30Count + 1}%>
+  <%var filename = i.state%>
+<%}%>
+
+
+
+
+
+<script>
+d3.json('crime.json', function(err, rows){
+    function unpack(rows, key) {
+        let newrows = rows.slice();
+        return newrows.map(function(row) { return row[key]; });
+    }
+    function getinfo(rows) {
+        let newrows2 = rows.slice();
+        return newrows2.map(function(row) { return 'Name: '+row['name']+'<br> Date: '+row['date']+'<br> Age: '+row['age']+'<br> Gender: '+row['gender']+'<br> Race: '+row['race']+'<br> Armed: '+row['armed']+'<br> Mental Ilness: '+row['mental_illness']+
+        '<br> Threat Level: '+row['threat_level']+'<br> Flee: '+row['flee']; });
+    }
+    var scl = [[0,'rgb(5, 10, 172)'],[0.35,'rgb(140, 60, 190)'],[0.5,'rgb(70, 100, 245)'], [0.6,'rgb(90, 20, 245)'],[0.7,'rgb(106, 137, 247)'],[1,'rgb(220, 220, 220)']];
+    var macrodata = [{
+        type:'scattergeo',
+        locationmode: 'USA-states',
+        customdata: ['3','5','6','9','2'],
+        lon: unpack(rows, 'longitude'),
+        lat: unpack(rows, 'latitude'),
+        hovertext: getinfo(rows),
+        hoverinfo:  'text',
+        mode: 'markers',
+        marker: {
+            size: 3.5,
+            opacity: 0.5,
+            reversescale: true,
+            autocolorscale: false,
+            symbol: 'circle',
+            line: {
+                width: .5,
+                color: 'rgb(102,102,102)'
+            },
+            colorscale: scl,
+            cmin: 0,
+            color: unpack(rows, 'age'),
+            colorbar: {
+                title: 'Victim Age (Years)'
+            }
+        }
+    }];
+
+    var macrolayout = {
+        title: 'Fatal Police Shootings in the US',
+        colorbar: true,
+        paper_bgcolor:'#0c040c',
+        margin:{
+          b: 0,
+          l:0,
+          r:0,
+          t:100
+        },
+        height:700,
+
+        // width:1000,
+        // autosize:false,
+        geo: {
+            scope: 'usa',
+            projection: {
+                type: 'albers usa'
+            },
+            showland: true,
+            landcolor: 'rgb(250,250,250)',
+            subunitcolor: 'rgb(200,0,0)',
+            countrycolor: 'rgb(217,217,217)',
+            width: 1,
+            subunitwidth: 1
+
+        }
+    };
+    Plotly.newPlot("myDiv", macrodata, macrolayout, {showLink: false});
+});
+</script>
+
+
+<main>
+
+<%- include('partials/navbar.ejs') %>
+
+
+
+
+
+
+
+
+  <section id="home" class="d-flex align-items-center position-relative vh-100 cover hero">
+    <div class="container-fluid container-fluid-max2">
+      <body2 style="--n-rows: 6; --n-cols: 18">
+        <style>.hex-cell:nth-of-type(17n + 1) { grid-column-start: 2 }</style>
+        <div class="hex-cell"><img src="/Alexis Wilson.jpeg"/></div>
+        <div class="hex-cell"><img src="/Mathew Oxendine.jpeg"/></div>
+        <div class="hex-cell"><img src="/Josh Sarrett.jpeg"/></div>
+        <div class="hex-cell"><img src="/Betty Sexton.jpeg"/></div>
+        <div class="hex-cell"><img src="/Bodhi Wilson Dean Phelps.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Antwun Shumpert.jpeg"/></div>
+        <div class="hex-cell"><img src="/Brian Marksberry.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Jacy Kevin McManus.png"/></div>
+        <div class="hex-cell"><img src="/Chad Michael Breinholt.jpeg"/></div>
+        <div class="hex-cell"><img src="/Charly Leundeu Keunang.jpeg"/></div>
+        <div class="hex-cell"><img src="/CHet Knuppel.jpeg"/></div>
+        <div class="hex-cell"><img src="/Bertrand Davis.jpeg"/></div>
+        <div class="hex-cell"><img src="/Isaiah Lewis.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Artago Damon Howard.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Jonathan David Victor.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Danny Thomas.jpeg"/></div>
+        <div class="hex-cell"><img src="/Christopher Sowell.jpeg"/></div>
+        <div class="hex-cell"><img src="/Jonathan Price.png"/></div>
+        <div class="hex-cell"><img src="/Jose Roman Rodriguez.jpeg"/></div>
+        <div class="hex-cell"><img src="/Jeremy Mardis.jpeg"/></div>
+        <div class="hex-cell"><img src="/Brian Easley.jpeg"/></div>
+        <div class="hex-cell"><img src="/Katlyn Alix.jpeg"/></div>
+        <div class="hex-cell"><img src="/Autumn Steele.jpeg"/></div>
+        <div class="hex-cell"><img src="/Pedro Cruz-Amado.jpeg"/></div>
+        <div class="hex-cell"><img src="/Renee Davis.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Michael Renfroe.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Antonio Zambrano-Montes.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Alfreed Olango.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Ulises Valladares.jpeg"/></div>
+        <div class="hex-cell"><img src="/Deven Guilford.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Corey Mobley.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Cynthia Fields.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Daniel Covarrubias.jpeg"/></div>
+        <div class="hex-cell"><img src="/Detric Driver.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Farhad Jabbari.png"/></div>
+        <div class="hex-cell"><img src="/1Frankie Anchondo.jpeg"/></div>
+        <div class="hex-cell"><img src="/Fanta Bility.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Jesse J. Quinton.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Ahmaud Arbery.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Justine Damond.jpg"/></div>
+        <div class="hex-cell"><img src="/1Kevin Mathews.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Marzeus Scott.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Juan Manuel Moreno.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Miguel Espinal.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Nicholas Bils.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Peter Gaines.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Rashaun Washington.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Richard Solitro.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Terence Crutcher.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Timothy Daniel Statham.jpeg"/></div>
+        <div class="hex-cell"><img src="/1Antronie Scott.jpeg"/></div>
+
+
+
+
+
+<div class="row text-block">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5 typewriter" style="right: -10vw;">
+          <%- include('partials/header.ejs') %>
+          <div class="mt-3">
+          </div>
+        </div>
+</div>
+
+
+      </body2>
+    </div>
+  </section>
+
+  <section id="summary" class="summary">
+        <div class="container-fluid container-fluid-max">
+          <div class="row text-center py-5">
+            <div>
+              <p class="text-red" style="font-size: 145%;">Using data collected by the Washington Post, we generated two infographics concerning the number of people that have been fatally shot by the police from 2015-2021. We’ve used a map-based scatter plot and bar graphs to visually show the amount of shootings as well as the circumstances of each shooting, breaking them down by state. the purpose of our endeavour is to give you a better understanding of what the are the circumstances truly like when police fatally kill civilians.</p>
+            </div>
+          </div>
+        </div>
+  </section>
+
+  <section id="featured-destinations" class="featured-destinations bg-lightblue">
+      <div class="row no-gutters">
+        <div class="col-12 col-md-9 order-2">
+
+            <div id = "myDiv"></div>
+
+        </div>
+        <div class="col-12 col-md-3 d-flex align-items-center order-3" style="background-color:#0c040c;">
+          <div class="p-15">
+
+            <!-- With number fields -->
+            <div class="filter level-filter level-req">
+              <div id="rangeSlider" class="range-slider">
+
+                <label>Time Range:</label>
+
+                <div class="number-group">
+                  <input class="number-input" type="number" value="2015" min="2015" max="2021"/> to
+                  <input class="number-input" type="number" value="2021" min="2015" max="2021"/>
+                </div>
+
+                <div class="range-group">
+                  <input class="range-input" value="2015" min="2015" max="2021" step="1" type="range"/>
+                  <input class="range-input" value="2021" min="2015" max="2021" step="1" type="range"/>
+                </div>
+              </div>
+            </div><!-- // filter level-filter -->
+
+
+            <br>
+            <h3 style="text-align: center; color:#d6d6d6;"><u>U.S. Overall</u></h3>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong><%=(Math.round(noMentalIllnessCount/totalcount * 10000)*.01).toFixed(1)%>%</strong></span> had <span style="color:#3eb0fa;"><strong>no</strong></span> signs of <span style="color:#3eb0fa;"><strong>mental illness</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong><%=(Math.round(noFleeCount/totalcount * 10000)*.01).toFixed(1)%>%</strong></span> were <span style="color:#3eb0fa;"><strong>not fleeing</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong><%=(Math.round(unarmedCount/totalcount * 10000)*.01).toFixed(1)%>%</strong></span> were <span style="color:#3eb0fa;"><strong>unarmed</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong><%=(Math.round(under21Count/totalcount * 10000)*.01).toFixed(1)%>%</strong></span> were under <span style="color:#3eb0fa;"><strong>21</strong></span>.</p>
+            <p style="text-align: center; color:#d6d6d6; font-size: 135%;"><span style="color:#3eb0fa;"><strong><%=(Math.round(under30Count/totalcount * 10000)*.01).toFixed(1)%>%</strong></span> were under <span style="color:#3eb0fa;"><strong>30</strong></span>.</p>
+
+
+
+            <!-- <p style="text-align: center; color:#d6d6d6;">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
+              mollitia animi, id est laborum et dolorum fuga.</p> -->
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section id="process" class="process">
+        <div class="container-fluid container-fluid-max">
+          <div class="row text-center py-5">
+            <div class="col-12 pb-4">
+              <h2 class="text-red">Interesting Perspectives</h2>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <span class="fa-stack fa-2x">
+              </span>
+              <h3 class="mt-3 text-red h4">POINT 1</h3>
+              <p class="text-red">Number of shootings. Although the US is known to have issues with police killing, thousands of people have been killed in the past 7 years. This is notable comparing it to the number of police killings in other nations. The U.S. has one of the highest percentages when it comes to police killings per 10 million people.</p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <span class="fa-stack fa-2x">
+              </span>
+              <h3 class="mt-3 text-red h4">POINT 2</h3>
+              <p class="text-red">Variety in data. Often when these shootings make headlines, the profile of the victim paints these shootings as if they are just a problem that affects one demographic. The unfortunate robustness of our data shows this is an issue which affects every age group and demographic.</p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <span class="fa-stack fa-2x">
+              </span>
+              <h3 class="mt-3 text-red h4">POINT 3</h3>
+              <p class="text-red">Spread of victims location wise. The number of police killings in the country are more spread out than what one might believe, considering the preconceived notions people have of some US states, particularly cities, being hubs for police violence and murder.</p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <span class="fa-stack fa-2x">
+              </span>
+              <h3 class="mt-3 text-red h4">POINT 4</h3>
+              <p class="text-red">The majority of these victims did not show any signs of mental illness which also helps to combat ideas of these victims as “crazy” or “insane”.</p>
+            </div>
+            <div class="col-12 pt-3">
+              <!-- <a class="btn bg-red text-white" target="_blank" href="https://en.wikipedia.org/wiki/Neuschwanstein_Castle" role="button">Learn More →</a> -->
+              <!-- <a class="btn btn-outline-primary text-white" target="_blank" href="about.html" role="button">Learn More →</a> -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <%- include('partials/footer.ejs') %>
+</main>
+
+
+
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script><script  src="/js/script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="/js/script2.js"></script>
+<script  src="/js/aboutpagechangeme.js"></script>
+
+</html>

@@ -1,5 +1,15 @@
 {
-"scripts":{
-  "deploy": "open https://elirapport22.github.io/Police-Killings-Since-2015/"
-}
+  "scripts": {
+    "deploy": "open https://elirapport22.github.io/Police-Killings-Since-2015/",
+    "prebuild": "node preBuild.js",
+    "build": "node Build.js && node siteGenerator.js",
+    "postbuild": "node server.js && start http://localhost:3000"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "git": "^0.1.5",
+    "path": "^0.12.7"
+  }
 }

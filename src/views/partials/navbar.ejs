@@ -1,56 +1,115 @@
-<!doctype html>
-<html lang = "en">
-
+<!DOCTYPE html>
+<html lang="en" >
 <head>
-  <meta charset="utf-8">
-  <title>Micrographics</title>
-  <meta name = "author" content = "Eli Rapport and Musa Jallow">
-  <meta name = "description" content = "Infographics">
-  <!-- <link rel = "stylesheet" href = "../css/styles.css"> -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'><link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+  <script src='https://cdn.plot.ly/plotly-2.6.3.min.js'></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- bootstrap.bundle.min.js / bootstrap.bundle.js -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <style>
-    .bar{fill: steelblue;}
-    .bar:hover{fill:brown;}
-    .axis--x path{
-      display: none;
-    }
-  </style>
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar" data-offset="72" class="position-relative" style="background-color: #0c040c;">
+  <header class="fixed-top page-header">
+    <div class="container-fluid container-fluid-max">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-lg-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pick a State (A through M)
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="AK.html"> AK.html </a>
+                  <a class="dropdown-item" href="AL.html"> AL.html </a>
+                  <a class="dropdown-item" href="AR.html"> AR.html </a>
+                  <a class="dropdown-item" href="AZ.html"> AZ.html </a>
+                  <a class="dropdown-item" href="CA.html"> CA.html </a>
+                  <a class="dropdown-item" href="CO.html"> CO.html </a>
+                  <a class="dropdown-item" href="CT.html"> CT.html </a>
+                  <a class="dropdown-item" href="DC.html"> DC.html </a>
+                  <a class="dropdown-item" href="DE.html"> DE.html </a>
+                  <a class="dropdown-item" href="FL.html"> FL.html </a>
+                  <a class="dropdown-item" href="GA.html"> GA.html </a>
+                  <a class="dropdown-item" href="HI.html"> HI.html </a>
+                  <a class="dropdown-item" href="IA.html"> IA.html </a>
+                  <a class="dropdown-item" href="ID.html"> ID.html </a>
+                  <a class="dropdown-item" href="IL.html"> IL.html </a>
+                  <a class="dropdown-item" href="IN.html"> IN.html </a>
+                  <a class="dropdown-item" href="KS.html"> KS.html </a>
+                  <a class="dropdown-item" href="KY.html"> KY.html </a>
+                  <a class="dropdown-item" href="LA.html"> LA.html </a>
+                  <a class="dropdown-item" href="MA.html"> MA.html </a>
+                  <a class="dropdown-item" href="MD.html"> MD.html </a>
+                  <a class="dropdown-item" href="ME.html"> ME.html </a>
+                  <a class="dropdown-item" href="MI.html"> MI.html </a>
+                  <a class="dropdown-item" href="MN.html"> MN.html </a>
+                  <a class="dropdown-item" href="MO.html"> MO.html </a>
+                  <a class="dropdown-item" href="MS.html"> MS.html </a>
+                  <a class="dropdown-item" href="MT.html"> MT.html </a>
+                </ul>
+            </li>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pick a State (N through Z)
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="NC.html"> NC.html </a>
+                  <a class="dropdown-item" href="NE.html"> NE.html </a>
+                  <a class="dropdown-item" href="NH.html"> NH.html </a>
+                  <a class="dropdown-item" href="NJ.html"> NJ.html </a>
+                  <a class="dropdown-item" href="NM.html"> NM.html </a>
+                  <a class="dropdown-item" href="NV.html"> NV.html </a>
+                  <a class="dropdown-item" href="NY.html"> NY.html </a>
+                  <a class="dropdown-item" href="OH.html"> OH.html </a>
+                  <a class="dropdown-item" href="OK.html"> OK.html </a>
+                  <a class="dropdown-item" href="OR.html"> OR.html </a>
+                  <a class="dropdown-item" href="PA.html"> PA.html </a>
+                  <a class="dropdown-item" href="SC.html"> SC.html </a>
+                  <a class="dropdown-item" href="SD.html"> SD.html </a>
+                  <a class="dropdown-item" href="TN.html"> TN.html </a>
+                  <a class="dropdown-item" href="TX.html"> TX.html </a>
+                  <a class="dropdown-item" href="UT.html"> UT.html </a>
+                  <a class="dropdown-item" href="VA.html"> VA.html </a>
+                  <a class="dropdown-item" href="VT.html"> VT.html </a>
+                  <a class="dropdown-item" href="WA.html"> WA.html </a>
+                  <a class="dropdown-item" href="WI.html"> WI.html </a>
+                  <a class="dropdown-item" href="WV.html"> WV.html </a>
+                  <a class="dropdown-item" href="WY.html"> WY.html </a>
+                </ul>
+            </li>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="about.html">about.html<span class="sr-only">(current)</span></a>
-        </li>
 
-        <%let arrayOfStateNames = ["AK","AL","AR","AZ","CA","CO","CT","DC","DE","FL","GA","HI","IA","ID","IL","IN","KS","KY","LA","MA","MD","ME","MI","MN","MO","MS","MT","NC","NE","NH","NJ","NM","NV","NY","OH","OK","OR","PA","SC","SD","TN","TX","UT","VA","VT","WA","WI","WV","WY"];%>
-        <%for(let i of arrayOfStateNames){%>
-          <li class="nav-item active">
-            <%let filename = ''+i+'.html';%>
-            <a class="nav-link" href="<%=filename%>"><%=filename%><span class="sr-only">(current)</span></a>
-          </li>
-        <%}%>
-
-
-      </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About this Project</a>
+            </li>
+          </ul>
+          <!-- <div class="text-white">
+            <a href="tel:1234567890" class="mr-2">
+              <i class="fas fa-phone"></i>
+              <div class="d-none d-xl-inline">1234567890</div>
+            </a>
+            <a href="mailto:info@honeydreams.com">
+              <i class="fas fa-envelope"></i>
+              <div class="d-none d-xl-inline">info@honeydreams.com</div>
+            </a>
+          </div> -->
+        </div>
+      </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </div>
-  </nav>
+  </header>
+</body>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-<body>
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<!-- <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script2.js"></script> -->
