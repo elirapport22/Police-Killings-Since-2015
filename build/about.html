@@ -6,497 +6,344 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About Page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!doctype html>
-<html lang = "en">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.6.3/css/all.css'><link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <div class="body" data-spy="scroll" data-target="#navbar" data-offset="72" class="position-relative" style="background-color: #0c040c;">
+  <header class="fixed-top page-header">
+    <div class="container-fluid container-fluid-max">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-lg-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pick a State (A through M)
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="AK.html"> AK.html </a>
+                  <a class="dropdown-item" href="AL.html"> AL.html </a>
+                  <a class="dropdown-item" href="AR.html"> AR.html </a>
+                  <a class="dropdown-item" href="AZ.html"> AZ.html </a>
+                  <a class="dropdown-item" href="CA.html"> CA.html </a>
+                  <a class="dropdown-item" href="CO.html"> CO.html </a>
+                  <a class="dropdown-item" href="CT.html"> CT.html </a>
+                  <a class="dropdown-item" href="DC.html"> DC.html </a>
+                  <a class="dropdown-item" href="DE.html"> DE.html </a>
+                  <a class="dropdown-item" href="FL.html"> FL.html </a>
+                  <a class="dropdown-item" href="GA.html"> GA.html </a>
+                  <a class="dropdown-item" href="HI.html"> HI.html </a>
+                  <a class="dropdown-item" href="IA.html"> IA.html </a>
+                  <a class="dropdown-item" href="ID.html"> ID.html </a>
+                  <a class="dropdown-item" href="IL.html"> IL.html </a>
+                  <a class="dropdown-item" href="IN.html"> IN.html </a>
+                  <a class="dropdown-item" href="KS.html"> KS.html </a>
+                  <a class="dropdown-item" href="KY.html"> KY.html </a>
+                  <a class="dropdown-item" href="LA.html"> LA.html </a>
+                  <a class="dropdown-item" href="MA.html"> MA.html </a>
+                  <a class="dropdown-item" href="MD.html"> MD.html </a>
+                  <a class="dropdown-item" href="ME.html"> ME.html </a>
+                  <a class="dropdown-item" href="MI.html"> MI.html </a>
+                  <a class="dropdown-item" href="MN.html"> MN.html </a>
+                  <a class="dropdown-item" href="MO.html"> MO.html </a>
+                  <a class="dropdown-item" href="MS.html"> MS.html </a>
+                  <a class="dropdown-item" href="MT.html"> MT.html </a>
+                </ul>
+            </li>
 
-<head>
-  <meta charset="utf-8">
-  <title>Micrographics</title>
-  <meta name = "author" content = "Eli Rapport and Musa Jallow">
-  <meta name = "description" content = "Infographics">
-  <!-- <link rel = "stylesheet" href = "../css/styles.css"> -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <!-- bootstrap.bundle.min.js / bootstrap.bundle.js -->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <style>
-    .bar{fill: steelblue;}
-    .bar:hover{fill:brown;}
-    .axis--x path{
-      display: none;
-    }
-  </style>
-
-</head>
-
-<body>
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="about.html">about.html<span class="sr-only">(current)</span></a>
-        </li>
-
-        
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="AK.html">AK.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="AL.html">AL.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="AR.html">AR.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="AZ.html">AZ.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="CA.html">CA.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="CO.html">CO.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="CT.html">CT.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="DC.html">DC.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="DE.html">DE.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="FL.html">FL.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="GA.html">GA.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="HI.html">HI.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="IA.html">IA.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="ID.html">ID.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="IL.html">IL.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="IN.html">IN.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="KS.html">KS.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="KY.html">KY.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="LA.html">LA.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="MA.html">MA.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="MD.html">MD.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="ME.html">ME.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="MI.html">MI.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="MN.html">MN.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="MO.html">MO.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="MS.html">MS.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="MT.html">MT.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="NC.html">NC.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="NE.html">NE.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="NH.html">NH.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="NJ.html">NJ.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="NM.html">NM.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="NV.html">NV.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="NY.html">NY.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="OH.html">OH.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="OK.html">OK.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="OR.html">OR.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="PA.html">PA.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="SC.html">SC.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="SD.html">SD.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="TN.html">TN.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="TX.html">TX.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="UT.html">UT.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="VA.html">VA.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="VT.html">VT.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="WA.html">WA.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="WI.html">WI.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="WV.html">WV.html<span class="sr-only">(current)</span></a>
-          </li>
-        
-          <li class="nav-item active">
-            
-            <a class="nav-link" href="WY.html">WY.html<span class="sr-only">(current)</span></a>
-          </li>
-        
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pick a State (N through Z)
+              </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="NC.html"> NC.html </a>
+                  <a class="dropdown-item" href="NE.html"> NE.html </a>
+                  <a class="dropdown-item" href="NH.html"> NH.html </a>
+                  <a class="dropdown-item" href="NJ.html"> NJ.html </a>
+                  <a class="dropdown-item" href="NM.html"> NM.html </a>
+                  <a class="dropdown-item" href="NV.html"> NV.html </a>
+                  <a class="dropdown-item" href="NY.html"> NY.html </a>
+                  <a class="dropdown-item" href="OH.html"> OH.html </a>
+                  <a class="dropdown-item" href="OK.html"> OK.html </a>
+                  <a class="dropdown-item" href="OR.html"> OR.html </a>
+                  <a class="dropdown-item" href="PA.html"> PA.html </a>
+                  <a class="dropdown-item" href="SC.html"> SC.html </a>
+                  <a class="dropdown-item" href="SD.html"> SD.html </a>
+                  <a class="dropdown-item" href="TN.html"> TN.html </a>
+                  <a class="dropdown-item" href="TX.html"> TX.html </a>
+                  <a class="dropdown-item" href="UT.html"> UT.html </a>
+                  <a class="dropdown-item" href="VA.html"> VA.html </a>
+                  <a class="dropdown-item" href="VT.html"> VT.html </a>
+                  <a class="dropdown-item" href="WA.html"> WA.html </a>
+                  <a class="dropdown-item" href="WI.html"> WI.html </a>
+                  <a class="dropdown-item" href="WV.html"> WV.html </a>
+                  <a class="dropdown-item" href="WY.html"> WY.html </a>
+                </ul>
+            </li>
 
 
-      </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About this Project</a>
+            </li>
+          </ul>
+          <!-- <div class="text-white">
+            <a href="tel:1234567890" class="mr-2">
+              <i class="fas fa-phone"></i>
+              <div class="d-none d-xl-inline">1234567890</div>
+            </a>
+            <a href="mailto:info@honeydreams.com">
+              <i class="fas fa-envelope"></i>
+              <div class="d-none d-xl-inline">info@honeydreams.com</div>
+            </a>
+          </div> -->
+        </div>
+      </nav>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </div>
-  </nav>
+  </header>
+</div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-<body>
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<!-- <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script2.js"></script> -->
 
   </head>
-  <body>
-    <br>
-    <br>
-    <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="../wireframe1.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Wireframe 1 (Musa's Macro Wireframe)</h5>
-          <p class="card-text"> Understandability:
-            <br><br>
-            <b> Modeling </b>: It is easy to build a conceptual model of the system because it is based on a calendar, something a lot of people already have a strong mental map of.
-            <br><br>
-            <b>  Simplicity </b>: The system is easy to understand and interact with because it is based on a modern calendar.
-            <br><br>
-            <b>  Consistency </b>: Signifiers are used consistently across each month, with the help of the legend. Minimizes the knowledge the user needs to learn because they most likely already understand how a calendar works. The legend is the only thing the user needs to learn about.
-            <br><br>
-            <b>  Achievability </b> : The wireframe seems achievable given our time constraints. All we would have to consider would be the dates, which simplifies the process, and the calendar design is pretty straightforward and could be reused across different months and years.
-            <br><br>
-            Three additional perspectives not under the understandability umbrella:
-            <br><br>
-            <b>  Accessibility </b>: The calendar graphic is not accessible for blind individuals -- there is not a good way to turn the calendar visualization into an audible narration. The deaf would be able to see our infographic. While not disabled, the illiterate or anyone else who may not speak English perhaps would have a hard time reading the legend, but would be able to get the gist of the calendar due to the recognizability of a calendar diagram and the dates’ numbers which are constant across all languages.
-            <br><br>
-            <b>  Iterability </b>: Our design could not just mark days on which a fatal shooting occured, but mark more things like race or whether the victim was fleeing. Doing this would not require an overhauling of the system.’
-            The effects of adding things like that to the calendar would be minimal. There would only be some new signifiers in the legend. Our users would not have to relearn the system.
-            <br><br>
-            <b>  Perceptibility </b>: Users would be able to perceive the current state of the system easily because the system is a calendar.
-            Our system would have to be adjusted to accommodate colorblind users because color is used for the legend.
-          </p>
-        </div>
-      </div>
-      <div class="card">
-        <img class="card-img-top" src="../wireframe2.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Wireframe 2(Musa's Micro Wireframe)</h5>
-          <p class="card-text">
-            Understandability:
-            <br><br>
-            <b> Modeling </b> : It is not difficult to build a conceptual model of this system because a lot of people have interacted with bar graphs before.
-            <br><br>
-            <b> Simplicity </b> : The system is color-coded and easy to understand because it conveys data in a very visually clear manner. There are also signifiers to help with comprehension.
-            <br><br>
-            <b> Consistency </b> : Signifiers are consistently used in the system. The user most likely has already been exposed to a bar graph. Minimal information for the user to learn.
-            <br><br>
-            <b> Achievability </b> :
-<<<<<<< Updated upstream
-            The wireframe is very achievable. A bar graph is one of the simplest and most practical ways to display data. Given our time constraints, we can implement this system.
-=======
-   The wireframe is very achievable. A bar graph is one of the simplest and most practical ways to display data. Given our time constraints, we can implement this system.
->>>>>>> Stashed changes
-            <br><br>
-            Three additional perspectives not under the understandability umbrella:
-            <br><br>
-            <b> Mappings </b> : The mappings are clear and natural. Users will be able to intuitively connect the percentage benchmarks to the bars.
-            <br><br>
-            <b> Political Intent </b> : The system prompts the user to examine the conclusions that the data reflects. If there is one racial group that is disproportionately killed in police shootings, it naturally begs the question why. That aspect of the design is intentional.
-<<<<<<< Updated upstream
-            <br><br>
-            <b> Privacy </b> : Our system does not rely on user information and uses publicly available data. There are no data concerns.
-=======
-
-            <br><br>
-            <b> Privacy </b> : Our system does not rely on user information and uses publicly available data. There are no data concerns.
+  <main>
 
 
->>>>>>> Stashed changes
-          </p>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="card-deck">
-      <div class="card">
-        <img class="card-img-top" src="../wireframe3.JPG" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Wireframe 3 (Eli's Macro Wireframe)</h5>
-          <p class="card-text">Understandability:
-            <br><br>
-            <b> Modeling </b> : The system is based on a map of the United States, so the conceptual model should be very easy to build.
-            <br><br>
-            <b> Structure </b> : The system groups data points by state and is very structured since it relies on that map of the US. Each state will have its own set of information that will be available by clicking on the specific state.
-            <br><br>
-            <b> Visibility </b> : All important elements of the system are included in the design. There may be some difficulty constructing an accurate model of the system image without some signifiers. Some of the affordances of the system(like the hovering) may not be intuitive.
-            <br><br>
-            <b> Achievability </b> : This wireframe is achievable, but it may not be plausible for us to achieve every single affordance in this wireframe, given our time constraints.
-            <br><br>
-<<<<<<< Updated upstream
-            Three additional perspectives not under the understandability umbrella:
-=======
-Three additional perspectives not under the understandability umbrella:
->>>>>>> Stashed changes
-            <br><br>
-            <b> Accessibility </b>: This infographic would not be accessible to the blind, but those who can see would be able to gauge what is going on from the map. However, if a person does not speak English or can not read, they may not be able to discern what the ‘popup’ info tab means when you hover over a point in the map. The deaf would be able to use this system.
-            <br><br>
-            <b> Signifier </b> : An individual may not know that they need to hover over a point in order to get the information about that individual -- there is no signifier for that feature. Additionally, there is no signifier indicating that you need to click to zoom in on a state.
-            <br><br>
-            <b> Simplicity </b>: there is a lot of information thrown at a user and the cluster of dots might make it overwhelming.
-            <br><br>
-            <b> Feedback </b> : feedback needed for when you select a time range and the data updates -- could just have text momentarily appear stating “time period updated.”
-<<<<<<< Updated upstream
-          </p>
-=======
-</p>
->>>>>>> Stashed changes
-      </div>
-    </div>
-      <div class="card">
-        <img class="card-img-top" src="../wireframe4.JPG" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Wireframe 4 (Eli's Micro Wireframe)</h5>
-          <p class="card-text">Understandability:
-            <br><br>
-            <b> Modeling </b> : It is not difficult to build a conceptual model of this system because a lot of people have interacted with bar graphs before.
-            <br><br>
-            <b> Simplicility </b> : The system is color-coded and easy to understand because it conveys data in a very visually clear manner. There are also signifiers to help with comprehension -- the different colors and bar headers.
-            <br><br>
-            <b> Consistency </b>: Signifiers are consistently used in the system. The user most likely has already been exposed to a bar graph. Minimal information for the user to learn.
-            <br><br>
-            <b> Achievability </b> :
-<<<<<<< Updated upstream
-            The wireframe is very achievable. A bar graph is one of the simplest and most practical ways to display data. Given our time constraints, we can implement this system.
-            <br><br>
-            Three additional perspectives not under the understandability umbrella:
-=======
-The wireframe is very achievable. A bar graph is one of the simplest and most practical ways to display data. Given our time constraints, we can implement this system.
-            <br><br>
-Three additional perspectives not under the understandability umbrella:
->>>>>>> Stashed changes
-            <br><br>
-            <b> Mappings </b>: The mappings are clear and natural. Users will be able to intuitively connect the percentage benchmarks to the bars because the percentages are within the bars that are above each category’s text name.
-            <br><br>
-            <b> Political Intent </b> : The system prompts the user to examine the conclusions that the data reflects. If there is one racial group that is disproportionately killed in police shootings, it naturally begs the question why. That aspect of the design is intentional. Additionally, because the filled bar graphs out of the 100% graph all the way to the right tend to cast the killed individual in an innocent light.
-            <br><br>
-<<<<<<< Updated upstream
-            <b> Privacy </b> : Our system does not rely on user information and uses publicly available data. There are no data concerns.
-          </p>
-=======
-
-<b> Privacy </b> : Our system does not rely on user information and uses publicly available data. There are no data concerns.
-</p>
-
->>>>>>> Stashed changes
-        </div>
-      </div>
-    </div>
-
-
-<<<<<<< Updated upstream
-<!--Explanation card and LucidChart card-->
-=======
-
-
-
-
-
-<!--Explanation card and LucidChart card-->
-
-
-
-
-
-
->>>>>>> Stashed changes
-<br>
-<br>
-    <div class="card-deck">
-      <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Selected Elements</h5>
-            <p class="card-text"> <b>Wireframe 2 & 4 (Micro) </b>:
-              <br><br>
-              We are taking the idea of comparing the different races from wireframe two, and placing them into one bar graph. We thought that it was important to get a sense of the racial breakdown of this population, but we are revamping it to do it in a more efficient manner. We are taking the extra bar graphs from wireframe four because it gives insight as to the other aspects of our data beyond race which provide a more developed and compelling understanding of police killings.
-              <br><br>
-              <b>Wireframe 3 (Macro) </b>:
-              <br><br>
-              We think wireframe three takes more advantage of the data we are offered when comparing it to wireframe one. Wireframe one only focuses on the dates of those police shootings, whereas wireframe three has the potential to show that in addition to data like race, location, and what the victim was doing when they were killed.
-            </p>
-            <!-- <h6 class = "card-title"></h6> -->
-            <br>
-            <br>
-            <h5 class="card-title">Division of Labor:</h5>
-            <p>
-              Eli will start working on microsummary, Musa will start working on macrosummary. More likely than not, both will work on each data graphic type.
-              </p>
+      <section id="header" class="header">
+        <div class="container-fluid container-fluid-max">
+          <div class="row text-center py-5">
+            <div>
+                    <h1 class="" style="color:0c040c;">Tracking Police Killings in the U.S. Since 2015</h1>
+ <br>
+            </div>
           </div>
         </div>
-      <div class="card">
-        <img class="card-img-top" src="../pipeline.jpeg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Wireframe 4 (Eli's Micro Wireframe)</h5>
-          <p class="card-text"> To start the project in earnest, we have to first process the data. This includes formatting and storing it in an easily accessible manner, like JSON. Then we will use that data to create the ‘Walking Skeleton’ needed to fulfill Milestone 4 by using the D3 library After that, we can polish our graphics and potentially implement some more features for our final project.
-          </p>
+      </section>
+
+
+      <section id="StartedWith" class="StartedWith">
+        <div class="container-fluid container-fluid-max">
+          <div class="row text-center py-5">
+            <div class="col-12 pb-4">
+              <h2 class="text-red">What We Started With</h2>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <span class="fa-stack fa-9x">
+                <img id="wf1" class="img-fluid" src="wireframe1copy1.png" onclick="changeMe1()">
+              </span>
+              <h3 class="mt-3 text-red h4 p-15">Musa's Macro Wireframe</h3>
+              <!-- <p class="text-red">Lorem ipsum dolor sit amet consectetur adipisicing elit sed repudiandae.</p> -->
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <span class="fa-stack fa-9x">
+                <img id="wf2" class="img-fluid" src="wireframe2copy1.png" onclick="changeMe2()">
+              </span>
+              <h3 class="mt-3 text-red h4 p-15">Musa's Micro Wireframe</h3>
+              <!-- <p class="text-red">Lorem ipsum dolor sit amet consectetur adipisicing elit sed repudiandae.</p> -->
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <span class="fa-stack fa-9x">
+                <img id="wf3" class="img-fluid" src="wireframe3copy1.png" onclick="changeMe3()">
+              </span>
+              <h3 class="mt-3 text-red h4 p-15">Eli's Macro Wireframe</h3>
+              <!-- <p class="text-red">Lorem ipsum dolor sit amet consectetur adipisicing elit sed repudiandae.</p> -->
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <span class="fa-stack fa-9x">
+                <img id="wf4" class="img-fluid" src="wireframe4copy1.png" onclick="changeMe4()">
+              </span>
+              <h3 class="mt-3 text-red h4 p-15">Eli's Micro Wireframe</h3>
+              <!-- <p class="text-red">Lorem ipsum dolor sit amet consectetur adipisicing elit sed repudiandae.</p> -->
+            </div>
+
+
+
+
+            <div class="col-12 pt-3">
+            </div>
+          </div>
         </div>
-      </div>
-  </body>
+      </section>
+
+      <!-- <div id="divd">First</div>
+      <button onclick='changeMe1()'>Click It</button> -->
+
+      <section id="test" class="test">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-7 order-1" id="currentSketchImage">
+            <!-- <img id="currentSketchImage" src="../images/blackstart.png" style="--hl: 0; transform: scale(.8); filter: brightness(1.2); object-fit: contain;"> -->
+          </div>
+          <div class="col-12 col-md-5 d-flex align-items-center order-2" style="background-color:#0c040c;">
+            <div class="p-15" id="currentSketchText">
+            <!--filled based on which sketch image is clicked. See aboutpagechangeme.js-->
+            </div>
+          </div>
+          </div>
+      </section>
+
+
+      <section id="pipeline" class="pipeline">
+        <div class="container-fluid container-fluid-max" style="background-color: #0c040c;">
+          <div class="row text-center py-5">
+            <div class="col-12 pb-4">
+              <h2 class="text-red">Our Initial Workflow Pipeline</h2>
+            </div>
+            <div>
+              <img id="pipelineimage" src="Pipeline.jpeg" style="--hl: 0; transform: scale(1); filter: brightness(1.2);" alt = "usemap" usemap = "#lessons">
+                <map name = "lessons">
+                  <area shape = "rect" coords = "34,34,190,210" alt = "Data formatting...killings data set" onclick="pipe1()" href = "#g">
+
+                  <area shape = "rect" coords = "34,245,185,450" alt = "Data formatting...racial demographics" onclick="pipe2()" href = "#g">
+
+                  <area shape = "rect" coords = "310,139,467,315" alt = "Creating 'walking skeleton' of website structure with little css focus" onclick="pipe3()" href = "#g">
+
+                  <area shape = "rect" coords = "604,34,760,197" alt = "Optimize website's usability and design. (i.e. enhancing skeleton)" onclick="pipe4()" href = "#g">
+
+                  <area shape = "rect" coords = "606,300,760,450" alt = "Create macro and micro infographics with Plotly" onclick="pipe5()" href = "#g">
+
+                  <area shape = "rect" coords = "900,127,1155,340" alt = "Embed infographics within macro page and iteratively embed them within micro pages (potentially linking micro pages within macro page's map in addition to navbar)" onclick="pipe6()" href = "#g">
+
+                  <area shape = "rect" coords = "1206,175,1360,290" alt = "Editing/revising Macro and Micro pages" onclick="pipe7()" href = "#g">
+
+                  <area shape = "rect" coords = "1412,155,1565,312" alt = "Dynamically update infographics based upon time range" onclick="pipe8()" href = "#g">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid container-fluid-max">
+          <div class="row text-center py-5">
+            <div>
+              <p id="pipelinetext" class="text-red p-15" style="font-size: 145%;">
+                <!--filled based on which part of pipeline is clicked. See aboutpagechangeme.js-->
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="finaldesign" class="finaldesign">
+        <div class="container-fluid container-fluid-max">
+          <div class="row">
+            <div class="text-center py-5 col-12 pb-4">
+              <h2 class="text-red" style="padding:35px">Piecing Together Our Designs From Our Wireframes</h2>
+          </div>
+            <div class="col-12 col-sm-6">
+              <div class="macro">
+                      <div class="themap">
+                          <img id="themap" src="map.png" style="filter: brightness(1.1);" onclick="macromap()" href = "#g">
+                      </div>
+
+                      <div class="timeslider">
+                          <img id="timeslider" src="selecttimerange.png" style="filter: brightness(1.1);" onclick="macroselecttimerange()" href = "#g">
+                      </div>
+
+                      <div class="usoverall">
+                          <img id="usoverall" src="usoverall.png" style="filter: brightness(1.1);" onclick="macrousoverall()" href = "#g">
+                      </div>
+                  </div>
+              <div class="container-fluid container-fluid-max">
+                <div class="row text-center py-5">
+                  <div>
+                    <p id="macrotext" class="text-red p-15" style="font-size: 145%;">
+                      <!--filled based on which part of collage is clicked. See aboutpagechangeme.js-->
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 p-15">
+                <div class="micro">
+                        <div class="microbarG">
+                            <img id="microbarG" src="microbargraph.png" style="filter: brightness(1.1);" onclick="microbarG()" href = "#g">
+                        </div>
+
+                        <div class="macrobarG">
+                            <img id="macrobarG" src="macrobarG.png" style="filter: brightness(1.1);" onclick="macrobarG()" href = "#g">
+                        </div>
+
+                        <div class="timesliderM">
+                            <img id="timesliderM" src="selecttimerange.png" style="filter: brightness(1.1);" onclick="timesliderM()" href = "#g">
+                        </div>
+
+                        <div class="overall">
+                            <img id="overall" src="usoverall.png" style="filter: brightness(1.1);" onclick="microoverall()" href = "#g">
+                        </div>
+                    </div>
+                <div class="container-fluid container-fluid-max">
+                  <div class="row text-center py-5">
+                    <div>
+                      <p id="microtext" class="text-red p-15" style="font-size: 145%;">
+                        <!--filled based on which part of collage is clicked. See aboutpagechangeme.js-->
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section id="keyterms" class="keyterms">
+        <div class="container-fluid container-fluid-max">
+          <div class="row py-5">
+            <div>
+              <p class="text-red" style="font-size: 145%;">Some terms we use that need explaining:</p>
+                <ul class="text-red" style="font-size: 145%;">
+                  <li>Armed - The victim has a weapon. This can range from a toy weapon to an actual gun.
+                  <li>W - White</li>
+                  <li>B - Black</li>
+                  <li>H - Hispanic/Latine</li>
+                  <li>A - Asian</li>
+                  <li>N - Native American/Latine</li>
+                  <li>U - Unknown/Unconfirmed</li>
+                  <li>O - Other</li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+      <footer>
+  <div class="text-center" style="background:#d6d6d6">
+    <p class="mb-0 h4 text-red font-weight-normal" style="color:#0c040c">Made by Eli and Musa! 2021.</p>
+    <p style="color:#3eb0fa;"> Visualizing police shootings in the US in order to inform others.</p>
+    <a class="btn bg-thatblue text-white font-weight-bold" href="https://github.com/washingtonpost/data-police-shootings" role="button">
+      LINK TO DATA
+      <i class="ml-1 fas fa-hand-point-right"></i>
+    </a>
+  </div>
+</footer>
+
+  <!-- <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script><script  src='/js/script.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="/js/script2.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+
+    </main>
+
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js'></script><script  src="script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="script2.js"></script>
+  <script  src="aboutpagechangeme.js"></script>
+
 </html>
